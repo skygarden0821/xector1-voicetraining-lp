@@ -3,653 +3,534 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>オンラインボイトレスクール | XECTOR1（セクターワン）</title>
-<meta name="description" content="XECTOR1のオンラインボイストレーニング。歌ってみた・カバー動画制作・SNS発信まで、あなたの「歌いたい」を全力サポート。無料体験レッスン受付中。">
+<title>プロボイスミュージックスクール｜オンラインボイトレ×活動バックアップ</title>
+<meta name="description" content="月々¥3,500〜。初心者からプロ志望まで。オンラインボイストレーニング×活動バックアップスクール。12ヶ月後にオリジナル楽曲リリース。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --primary: #3AAFE0;
-  --primary-dark: #2B94C3;
-  --primary-pale: #E8F6FC;
-  --primary-mist: #F2FAFD;
-  --accent: #FF6B8A;
-  --accent-pale: #FFF0F3;
-  --yellow: #FFD43B;
-  --yellow-pale: #FFF9E0;
-  --green: #51CF66;
-  --text: #333333;
-  --text-sub: #777777;
-  --text-light: #AAAAAA;
-  --bg: #FFFFFF;
-  --bg-gray: #F7F9FA;
-  --border: #E8EDF0;
-  --white: #FFFFFF;
-  --shadow-sm: 0 2px 12px rgba(0,0,0,0.04);
-  --shadow-card: 0 2px 16px rgba(58,175,224,0.08);
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-xs: 6px;
-  --font: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+:root{
+  --sky:#4AADE8;--sky-dark:#3591C5;--sky-pale:#EAF5FC;--sky-mist:#F4FAFD;
+  --accent:#FF6B8A;--accent-dark:#E55A78;--accent-pale:#FFF0F3;
+  --yellow:#FFD43B;--yellow-pale:#FFFAE6;
+  --green:#51CF66;
+  --text:#222;--text-sub:#555;--text-light:#999;
+  --bg:#FFF;--bg-gray:#F6F8FA;--border:#E4E8EC;
+  --font:'Zen Maru Gothic','Noto Sans JP',sans-serif;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.9;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  font-size: 15px;
-}
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-.container-wide { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;}
+img{max-width:100%;height:auto;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.container{max-width:640px;margin:0 auto;padding:0 20px;}
 
-/* Header */
-.header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  transition: box-shadow 0.3s;
-}
-.header.scrolled { box-shadow: var(--shadow-sm); }
-.header-inner {
-  max-width: 960px; margin: 0 auto; padding: 12px 20px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-icon {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary) 0%, #68D0F5 100%);
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 900; font-size: 0.85rem;
-}
-.logo-name { font-weight: 900; font-size: 1.1rem; color: var(--text); }
-.logo-sub { font-size: 0.6rem; color: var(--text-sub); font-weight: 500; }
-.header-nav { display: flex; align-items: center; gap: 24px; }
-.header-nav a { font-size: 0.8rem; color: var(--text-sub); font-weight: 500; }
-.header-nav a:hover { color: var(--primary); }
-.header-cta-btn {
-  background: var(--accent); color: #fff;
-  font-size: 0.8rem; font-weight: 700;
-  padding: 8px 20px; border-radius: 30px;
-  transition: background 0.2s;
-}
-.header-cta-btn:hover { background: #e8597a; }
-.mobile-menu { display: none; cursor: pointer; padding: 8px; }
-.mobile-menu span {
-  display: block; width: 22px; height: 2px;
-  background: var(--text); margin: 5px 0; border-radius: 2px;
-}
+/* placeholder for photos */
+.ph{width:100%;background:#E2EFF7;border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--sky-dark);font-size:.85rem;font-weight:700;position:relative;overflow:hidden;}
+.ph::after{content:'※ 写真を差し替え';position:absolute;bottom:8px;right:12px;font-size:.55rem;color:rgba(0,0,0,.18);font-weight:400;}
 
-/* Hero */
-.hero {
-  padding: 100px 0 60px;
-  background: linear-gradient(180deg, var(--primary-mist) 0%, var(--bg) 100%);
-  text-align: center;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -60px; right: -100px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(58,175,224,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.hero-visual { width: 100%; max-width: 560px; margin: 0 auto 32px; position: relative; }
-.hero-illust {
-  width: 100%; aspect-ratio: 16/9;
-  background: linear-gradient(135deg, var(--primary-pale) 0%, #D4F0FF 50%, var(--accent-pale) 100%);
-  border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-card);
-  position: relative; overflow: hidden;
-}
-.hero-illust-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.hero-illust-emoji { font-size: 3.5rem; }
-.hero-illust-text {
-  background: rgba(255,255,255,0.85);
-  padding: 8px 24px; border-radius: 30px;
-  font-size: 1.1rem; font-weight: 700; color: var(--primary-dark);
-}
-.hero-illust-bubble {
-  position: absolute;
-  background: var(--white);
-  border-radius: 20px; padding: 6px 14px;
-  font-size: 0.75rem; font-weight: 700;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  animation: floatBubble 4s ease-in-out infinite;
-}
-.hero-illust-bubble:nth-child(2) { top: 15%; left: 5%; color: var(--accent); animation-delay: 0s; }
-.hero-illust-bubble:nth-child(3) { top: 10%; right: 8%; color: var(--primary); animation-delay: 1s; }
-.hero-illust-bubble:nth-child(4) { bottom: 15%; left: 8%; color: var(--green); animation-delay: 2s; }
-.hero-illust-bubble:nth-child(5) { bottom: 20%; right: 5%; color: #FF9F43; animation-delay: 0.5s; }
-@keyframes floatBubble {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.hero-copy h1 {
-  font-size: clamp(1.5rem, 5vw, 2.2rem);
-  font-weight: 900; line-height: 1.5; color: var(--text); margin-bottom: 12px;
-}
-.hero-copy h1 em {
-  font-style: normal; color: var(--primary); position: relative;
-}
-.hero-copy h1 em::after {
-  content: ''; position: absolute; left: 0; bottom: 2px;
-  width: 100%; height: 8px;
-  background: rgba(58,175,224,0.15);
-  border-radius: 4px; z-index: -1;
-}
-.hero-sub { font-size: 0.95rem; color: var(--text-sub); line-height: 2; margin-bottom: 28px; }
-.hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn-cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 14px 32px; border-radius: 60px;
-  font-size: 0.95rem; font-weight: 700;
-  border: none; cursor: pointer; font-family: var(--font);
-  transition: all 0.2s;
-}
-.btn-cta-primary {
-  background: var(--accent); color: #fff;
-  box-shadow: 0 4px 16px rgba(255,107,138,0.25);
-}
-.btn-cta-primary:hover { background: #e8597a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,138,0.3); }
-.btn-cta-line { background: #06C755; color: #fff; box-shadow: 0 4px 16px rgba(6,199,85,0.2); }
-.btn-cta-line:hover { background: #05B04C; transform: translateY(-1px); }
-.hero-note { margin-top: 16px; font-size: 0.75rem; color: var(--text-light); }
+/* ===== Header ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.header.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.header-inner{max-width:640px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
+.logo-text{font-weight:900;font-size:.95rem;color:var(--text);line-height:1.3;}
+.logo-text small{display:block;font-size:.55rem;font-weight:500;color:var(--text-sub);}
+.header-cta{background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;padding:8px 14px;border-radius:30px;white-space:nowrap;}
 
-/* Campaign */
-.campaign {
-  background: var(--yellow-pale);
-  border-top: 3px solid var(--yellow);
-  padding: 16px 0; text-align: center;
-}
-.campaign-inner { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
-.campaign-badge { background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 900; padding: 3px 12px; border-radius: 4px; }
-.campaign-text { font-size: 0.95rem; font-weight: 700; color: var(--text); }
-.campaign-text strong { color: var(--accent); font-size: 1.3rem; }
-.campaign-date { font-size: 0.7rem; color: var(--text-sub); background: var(--white); padding: 2px 10px; border-radius: 20px; border: 1px solid var(--border); }
+/* ===== Hero ===== */
+.hero{padding:68px 0 0;}
+.hero-img{width:100%;aspect-ratio:3/4;background:linear-gradient(180deg,#e8f0f6 0%,#d0e4f0 100%);display:flex;align-items:flex-end;justify-content:center;position:relative;overflow:hidden;}
+.hero-img-inner{position:absolute;bottom:0;left:0;right:0;padding:28px 24px 24px;background:linear-gradient(0deg,rgba(0,0,0,.45) 0%,transparent 100%);}
+.hero-img-inner p{color:rgba(255,255,255,.9);font-size:1rem;line-height:1.9;font-weight:500;}
+.hero-img-placeholder{font-size:1.2rem;color:rgba(0,0,0,.15);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
 
-/* Section */
-.section { padding: 72px 0; }
-.section-gray { background: var(--bg-gray); }
-.section-pale { background: var(--primary-mist); }
-.section-head { text-align: center; margin-bottom: 40px; }
-.section-en { font-size: 0.7rem; font-weight: 700; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 6px; }
-.section-title { font-size: clamp(1.3rem, 4vw, 1.7rem); font-weight: 900; line-height: 1.5; }
-.section-title em { font-style: normal; color: var(--primary); }
-.section-desc { font-size: 0.85rem; color: var(--text-sub); margin-top: 12px; line-height: 1.9; }
+.hero-body{padding:28px 20px 36px;text-align:center;max-width:640px;margin:0 auto;}
+.hero-tagline{font-size:.8rem;color:var(--sky);font-weight:700;margin-bottom:6px;}
+.hero h1{font-size:clamp(1.4rem,5.5vw,2rem);font-weight:900;line-height:1.45;margin-bottom:4px;}
+.hero h1 em{font-style:normal;color:var(--sky);}
+.hero-school-name{font-size:1.1rem;font-weight:900;color:var(--text);margin-bottom:16px;}
+.hero-price-box{display:inline-flex;align-items:baseline;gap:4px;border:2px solid var(--text);border-radius:60px;padding:10px 28px;margin-bottom:8px;}
+.hero-price-label{font-size:.82rem;font-weight:700;}
+.hero-price-num{font-size:2.4rem;font-weight:900;line-height:1;}
+.hero-price-suffix{font-size:.9rem;font-weight:700;}
+.hero-price-note{font-size:.7rem;color:var(--text-light);margin-bottom:24px;}
+.hero-desc{font-size:.95rem;color:var(--text-sub);line-height:2;margin-bottom:28px;text-align:left;}
 
-/* Pain Points */
-.pain-list { display: flex; flex-direction: column; max-width: 560px; margin: 0 auto; }
-.pain-item {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 16px 20px; font-size: 0.95rem; font-weight: 500;
-  background: var(--primary-pale);
-  border-bottom: 1px solid rgba(58,175,224,0.12);
-  transition: background 0.2s;
-}
-.pain-item:nth-child(odd) { background: var(--white); }
-.pain-item:hover { background: #DFF2FB; }
+.btn-cta{display:block;width:100%;max-width:420px;margin:0 auto;padding:18px;border-radius:60px;text-align:center;font-size:1.1rem;font-weight:900;color:#fff;background:var(--accent);border:none;cursor:pointer;font-family:var(--font);box-shadow:0 4px 20px rgba(255,107,138,.3);transition:all .2s;}
+.btn-cta:hover{background:var(--accent-dark);transform:translateY(-1px);}
+.hero-note{margin-top:12px;font-size:.72rem;color:var(--text-light);text-align:center;}
 
-/* Features */
-.feature-list { display: flex; flex-direction: column; gap: 0; }
-.feature-item {
-  display: grid; grid-template-columns: 72px 1fr;
-  gap: 20px; align-items: start;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--border);
-}
-.feature-item:first-child { padding-top: 0; }
-.feature-item:last-child { border-bottom: none; padding-bottom: 0; }
-.feature-icon {
-  width: 72px; height: 72px;
-  background: var(--primary-pale); border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.feature-icon svg { width: 32px; height: 32px; stroke: var(--primary); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.feature-num { font-size: 0.65rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-.feature-title { font-size: 1.15rem; font-weight: 900; margin-bottom: 8px; line-height: 1.5; }
-.feature-desc { font-size: 0.88rem; color: var(--text-sub); line-height: 2; }
-.feature-desc strong { color: var(--text); font-weight: 700; background: linear-gradient(transparent 60%, rgba(58,175,224,0.15) 60%); }
+/* ===== Campaign ===== */
+.campaign{background:var(--yellow-pale);border-top:3px solid var(--yellow);padding:14px 20px;text-align:center;}
+.campaign-text{font-size:1rem;font-weight:700;}
+.campaign-text strong{color:var(--accent);font-size:1.3rem;}
+.campaign-date{font-size:.68rem;color:var(--text-sub);margin-top:2px;}
 
-/* Process */
-.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.process-step { text-align: center; position: relative; }
-.process-step::after { content: ''; position: absolute; top: 32px; right: -12px; width: 8px; height: 2px; background: var(--primary); }
-.process-step:last-child::after { display: none; }
-.process-num { width: 48px; height: 48px; margin: 0 auto 12px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; }
-.process-icon { font-size: 2rem; margin-bottom: 8px; }
-.process-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
-.process-desc { font-size: 0.72rem; color: var(--text-sub); line-height: 1.7; }
+/* ===== Section ===== */
+.section{padding:56px 0;}
+.section-gray{background:var(--bg-gray);}
+.section-sky{background:var(--sky-mist);}
+.section-head{text-align:center;margin-bottom:32px;}
+.section-title{font-size:clamp(1.25rem,5vw,1.7rem);font-weight:900;line-height:1.5;display:inline;}
+.section-title-hl{background:linear-gradient(transparent 60%,rgba(255,213,59,.4) 60%);padding:0 4px;}
+.section-desc{font-size:.92rem;color:var(--text-sub);margin-top:10px;line-height:2;}
 
-/* Pricing */
-.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 700px; margin: 0 auto; }
-.pricing-card {
-  background: var(--white); border: 2px solid var(--border);
-  border-radius: var(--radius); padding: 32px 24px;
-  text-align: center; position: relative; transition: border-color 0.3s, box-shadow 0.3s;
-}
-.pricing-card:hover { border-color: var(--primary); box-shadow: var(--shadow-card); }
-.pricing-card.recommended { border-color: var(--primary); box-shadow: var(--shadow-card); }
-.pricing-ribbon { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; font-size: 0.65rem; font-weight: 900; padding: 3px 16px; border-radius: 0 0 8px 8px; }
-.pricing-plan-name { font-size: 0.75rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; margin-top: 12px; }
-.pricing-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 16px; }
-.pricing-price { display: flex; align-items: baseline; justify-content: center; gap: 2px; margin-bottom: 4px; }
-.pricing-yen { font-size: 1rem; font-weight: 700; }
-.pricing-amount { font-size: 2.8rem; font-weight: 900; line-height: 1; color: var(--text); }
-.pricing-period { font-size: 0.75rem; color: var(--text-sub); margin-bottom: 20px; }
-.pricing-features { text-align: left; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-.pricing-feat { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; }
-.pricing-feat::before { content: '✓'; color: var(--primary); font-weight: 700; font-size: 0.75rem; width: 20px; height: 20px; flex-shrink: 0; background: var(--primary-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.pricing-btn {
-  display: block; width: 100%; padding: 12px; border-radius: 30px;
-  font-size: 0.9rem; font-weight: 700;
-  border: 2px solid var(--primary); background: var(--white); color: var(--primary);
-  cursor: pointer; font-family: var(--font); transition: all 0.2s;
-}
-.pricing-btn:hover { background: var(--primary); color: #fff; }
-.pricing-card.recommended .pricing-btn { background: var(--primary); color: #fff; border-color: var(--primary); }
-.pricing-card.recommended .pricing-btn:hover { background: var(--primary-dark); }
-.pricing-note { text-align: center; font-size: 0.75rem; color: var(--text-light); margin-top: 20px; }
+/* ===== Pain Points ===== */
+.pain-list{display:flex;flex-direction:column;}
+.pain-item{padding:16px 20px;font-size:1.05rem;font-weight:600;text-align:center;background:var(--sky-pale);border-bottom:1px solid rgba(74,173,232,.1);}
+.pain-item:nth-child(odd){background:var(--bg);}
 
-/* Voices */
-.voice-list { display: flex; flex-direction: column; gap: 20px; }
-.voice-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; position: relative; }
-.voice-quote { position: absolute; top: 16px; left: 20px; font-size: 2.5rem; color: var(--primary-pale); font-weight: 900; line-height: 1; }
-.voice-header { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text); padding-left: 4px; }
-.voice-body { font-size: 0.85rem; color: var(--text-sub); line-height: 2; margin-bottom: 16px; }
-.voice-footer { display: flex; align-items: center; gap: 12px; }
-.voice-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary-pale); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--primary); }
-.voice-name { font-size: 0.8rem; font-weight: 700; }
-.voice-detail { font-size: 0.7rem; color: var(--text-light); }
-.voice-tags { display: flex; gap: 6px; margin-top: 4px; }
-.voice-tag { font-size: 0.6rem; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: var(--primary); color: #fff; }
-.voice-tag.pink { background: var(--accent); }
+/* ===== 受講方法 ===== */
+.howto-icons{display:flex;justify-content:center;align-items:center;gap:8px;margin:20px 0;flex-wrap:wrap;}
+.howto-icon{width:48px;height:48px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.howto-plus{font-size:1.2rem;color:var(--text-light);font-weight:700;}
+.howto-text{font-size:.95rem;color:var(--text-sub);line-height:2;text-align:center;}
+.howto-text strong{color:var(--sky);font-weight:700;}
+.howto-box{background:var(--sky-pale);border-radius:14px;padding:20px;margin-top:24px;text-align:center;}
+.howto-box-title{font-size:1rem;font-weight:700;color:var(--sky);margin-bottom:6px;}
+.howto-box-desc{font-size:.88rem;color:var(--text-sub);line-height:2;}
 
-/* FAQ */
-.faq-list { display: flex; flex-direction: column; gap: 8px; }
-.faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
-.faq-q { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; user-select: none; font-size: 0.9rem; font-weight: 700; transition: background 0.2s; }
-.faq-q:hover { background: var(--bg-gray); }
-.faq-q-label { width: 28px; height: 28px; flex-shrink: 0; background: var(--primary); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; }
-.faq-q-text { flex: 1; }
-.faq-q-toggle { width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%; background: var(--bg-gray); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text-sub); transition: transform 0.3s, background 0.3s; }
-.faq-item.open .faq-q-toggle { transform: rotate(45deg); background: var(--primary-pale); color: var(--primary); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-.faq-item.open .faq-a { max-height: 300px; }
-.faq-a-inner { padding: 0 20px 20px 60px; font-size: 0.85rem; color: var(--text-sub); line-height: 2; }
+/* ===== Reasons (Cube style checklist) ===== */
+.reason-list{display:flex;flex-direction:column;gap:16px;}
+.reason-item{display:flex;align-items:flex-start;gap:12px;font-size:1rem;line-height:1.8;}
+.reason-check{width:24px;height:24px;flex-shrink:0;margin-top:3px;background:var(--sky);border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:900;}
 
-/* CTA */
-.cta-banner { background: linear-gradient(135deg, var(--primary-pale) 0%, #D4F0FF 50%, var(--accent-pale) 100%); padding: 56px 20px; text-align: center; }
-.cta-title { font-size: clamp(1.2rem, 4vw, 1.6rem); font-weight: 900; margin-bottom: 12px; line-height: 1.6; }
-.cta-desc { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 24px; }
-.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+/* ===== Dream ===== */
+.dream-visual{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,#0a0a23 0%,#16213E 50%,#0F3460 100%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.dream-visual::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(74,173,232,.12) 0%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%);animation:dg 6s ease-in-out infinite;}
+@keyframes dg{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+.dream-visual-inner{position:relative;z-index:1;text-align:center;padding:0 24px;}
+.dream-visual-en{font-size:.65rem;font-weight:700;color:var(--sky);letter-spacing:.15em;margin-bottom:8px;}
+.dream-visual h2{color:#fff;font-size:clamp(1.4rem,6vw,2rem);font-weight:900;line-height:1.45;margin-bottom:8px;}
+.dream-visual h2 em{font-style:normal;color:var(--yellow);}
+.dream-visual-sub{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.8;}
+.dream-body{padding:32px 20px;max-width:640px;margin:0 auto;}
+.dream-card{background:var(--bg);border:2px solid var(--sky);border-radius:16px;padding:24px 20px;margin-bottom:20px;}
+.dream-card-title{font-size:1.15rem;font-weight:900;text-align:center;margin-bottom:10px;line-height:1.5;}
+.dream-card-desc{font-size:.92rem;color:var(--text-sub);line-height:2;}
+.dream-platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;}
+.dream-platform{background:var(--sky-pale);padding:5px 12px;border-radius:20px;font-size:.72rem;font-weight:600;color:var(--sky-dark);}
 
-/* Form */
-.form-wrapper { max-width: 560px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 32px; }
-.form-group { margin-bottom: 24px; }
-.form-label { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; }
-.form-req { font-size: 0.6rem; font-weight: 900; background: var(--accent); color: #fff; padding: 2px 6px; border-radius: 3px; }
-.form-input, .form-select, .form-textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-xs); font-size: 0.9rem; font-family: var(--font); background: var(--white); transition: border-color 0.2s; }
-.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--primary); }
-.form-input::placeholder { color: var(--text-light); }
-.form-textarea { min-height: 100px; resize: vertical; }
-.form-radios, .form-checks { display: flex; gap: 16px; flex-wrap: wrap; }
-.form-radio, .form-check { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer; }
-.form-radio input, .form-check input { accent-color: var(--primary); width: 16px; height: 16px; }
-.form-submit-btn { display: block; width: 100%; padding: 16px; border: none; border-radius: 60px; background: var(--accent); color: #fff; font-size: 1rem; font-weight: 900; cursor: pointer; font-family: var(--font); box-shadow: 0 4px 16px rgba(255,107,138,0.25); transition: all 0.2s; }
-.form-submit-btn:hover { background: #e8597a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,138,0.3); }
-.form-agree { text-align: center; font-size: 0.7rem; color: var(--text-light); margin-top: 16px; line-height: 1.7; }
-.form-agree a { color: var(--primary); text-decoration: underline; }
+/* ===== Zero ===== */
+.zero-section{background:var(--accent-pale);padding:44px 20px;text-align:center;}
+.zero-other{font-size:1rem;color:var(--text-light);}
+.zero-other s{font-size:1.2rem;font-weight:700;}
+.zero-arrow{font-size:1.6rem;color:var(--accent);margin:8px 0;}
+.zero-ours{font-size:2.6rem;font-weight:900;color:var(--accent);line-height:1.2;margin-bottom:4px;}
+.zero-ours small{font-size:1rem;font-weight:700;}
+.zero-note{font-size:.88rem;color:var(--text-sub);line-height:2;margin-top:12px;}
+.zero-note strong{color:var(--accent);}
 
-/* Footer */
-.footer { background: var(--bg-gray); border-top: 1px solid var(--border); padding: 48px 0 24px; }
-.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
-.footer-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-.footer-logo-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--primary) 0%, #68D0F5 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 0.7rem; }
-.footer-logo-text { font-weight: 900; font-size: 1rem; }
-.footer-desc { font-size: 0.72rem; color: var(--text-sub); line-height: 1.9; }
-.footer-heading { font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; }
-.footer-links { display: flex; flex-direction: column; gap: 8px; }
-.footer-links a { font-size: 0.75rem; color: var(--text-sub); }
-.footer-links a:hover { color: var(--primary); }
-.footer-bottom { border-top: 1px solid var(--border); padding-top: 16px; text-align: center; font-size: 0.65rem; color: var(--text-light); }
+/* ===== Features ===== */
+.feature-list{display:flex;flex-direction:column;}
+.feature-item{padding:32px 0;border-bottom:1px solid var(--border);}
+.feature-item:last-child{border-bottom:none;padding-bottom:0;}
+.feature-num-label{font-size:.68rem;font-weight:700;color:var(--sky);margin-bottom:4px;}
+.feature-title{font-size:1.15rem;font-weight:900;margin-bottom:10px;line-height:1.5;}
+.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2;}
+.feature-desc strong{color:var(--text);font-weight:700;background:linear-gradient(transparent 60%,rgba(74,173,232,.18) 60%);}
+.feature-photo{margin-top:16px;aspect-ratio:16/10;border-radius:14px;}
 
-/* Floating */
-.floating-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; justify-content: center; gap: 10px; transform: translateY(100%); transition: transform 0.3s; }
-.floating-bar.show { transform: translateY(0); }
-.floating-btn { padding: 10px 24px; border-radius: 30px; font-size: 0.82rem; font-weight: 700; border: none; cursor: pointer; font-family: var(--font); display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
-.floating-btn-cta { background: var(--accent); color: #fff; }
-.floating-btn-cta:hover { background: #e8597a; }
-.floating-btn-line { background: #06C755; color: #fff; }
-.floating-btn-line:hover { background: #05B04C; }
+/* ===== Roadmap ===== */
+.roadmap-list{display:flex;flex-direction:column;position:relative;}
+.roadmap-list::before{content:'';position:absolute;left:27px;top:28px;bottom:28px;width:3px;background:var(--border);border-radius:2px;}
+.roadmap-item{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start;position:relative;padding:20px 0;}
+.roadmap-badge{width:56px;height:56px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.5rem;font-weight:900;color:#fff;z-index:1;flex-shrink:0;line-height:1.2;}
+.roadmap-badge span{font-size:.85rem;}
+.p1{background:var(--sky)}.p2{background:var(--green)}.p3{background:var(--accent)}.p4{background:linear-gradient(135deg,#D4A017,#F5D76E);color:#333;}
+.roadmap-title{font-size:1.05rem;font-weight:900;margin-bottom:4px;line-height:1.4;}
+.roadmap-desc{font-size:.88rem;color:var(--text-sub);line-height:2;}
 
-/* Reveal */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* ===== Pricing ===== */
+.price-block{margin-bottom:28px;}
+.price-block-label{display:inline-block;background:var(--sky);color:#fff;font-size:.85rem;font-weight:900;padding:6px 20px;border-radius:6px;margin-bottom:14px;}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--border);font-size:1rem;}
+.price-row:last-child{border-bottom:none;}
+.price-freq{font-weight:700;color:var(--text);min-width:60px;}
+.price-amount{font-weight:900;font-size:1.15rem;}
+.price-tax{font-size:.72rem;color:var(--text-light);font-weight:400;margin-left:4px;}
+.price-extra{background:var(--bg-gray);border-radius:12px;padding:20px;margin-top:8px;}
+.price-extra-row{display:flex;justify-content:space-between;font-size:.92rem;padding:6px 0;}
+.price-extra-row:first-child{font-weight:700;}
+.pricing-highlight{background:var(--yellow-pale);border:2px solid var(--yellow);border-radius:14px;padding:20px;margin-top:24px;font-size:.95rem;text-align:center;line-height:2;}
+.pricing-highlight strong{color:var(--accent);}
 
-/* Responsive */
-@media (max-width: 768px) {
-  .header-nav { display: none; }
-  .mobile-menu { display: block; }
-  .hero { padding: 90px 0 48px; }
-  .hero-illust { aspect-ratio: 4/3; }
-  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .process-step::after { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-  .feature-item { grid-template-columns: 56px 1fr; gap: 14px; }
-  .feature-icon { width: 56px; height: 56px; }
-  .feature-icon svg { width: 24px; height: 24px; }
-  .form-wrapper { padding: 28px 20px; }
-}
-@media (max-width: 480px) {
-  .process-grid { grid-template-columns: 1fr; }
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .cta-buttons { flex-direction: column; align-items: center; }
-  .floating-bar { gap: 6px; padding: 8px 12px; }
-  .floating-btn { padding: 8px 16px; font-size: 0.75rem; }
-}
+/* ===== Voices ===== */
+.voice-list{display:flex;flex-direction:column;gap:24px;}
+.voice-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.voice-photo{width:100%;aspect-ratio:4/3;background:#E2EFF7;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--sky-dark);font-weight:700;}
+.voice-body-wrap{padding:24px;}
+.voice-header{font-size:1.1rem;font-weight:900;margin-bottom:10px;line-height:1.5;}
+.voice-body{font-size:.92rem;color:var(--text-sub);line-height:2;margin-bottom:14px;}
+.voice-footer{display:flex;align-items:center;gap:10px;}
+.voice-avatar{width:44px;height:44px;border-radius:50%;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:var(--sky);flex-shrink:0;}
+.voice-name{font-size:.88rem;font-weight:700;}
+.voice-detail{font-size:.72rem;color:var(--text-light);}
+.voice-tags{display:flex;gap:5px;margin-top:3px;}
+.voice-tag{font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--sky);color:#fff;}
+.voice-tag.pink{background:var(--accent);}
+
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg);}
+.faq-q{display:flex;align-items:center;gap:10px;padding:16px 18px;cursor:pointer;user-select:none;font-size:.95rem;font-weight:700;}
+.faq-q:hover{background:var(--bg-gray);}
+.faq-q-label{width:28px;height:28px;flex-shrink:0;background:var(--sky);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;}
+.faq-q-text{flex:1;}
+.faq-q-toggle{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--bg-gray);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--text-light);transition:transform .3s,background .3s;}
+.faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--sky-pale);color:var(--sky);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 18px 18px 56px;font-size:.88rem;color:var(--text-sub);line-height:2;}
+
+/* ===== CTA ===== */
+.cta-banner{background:linear-gradient(135deg,var(--sky-pale) 0%,#D4F0FF 50%,var(--accent-pale) 100%);padding:44px 20px;text-align:center;}
+.cta-title{font-size:clamp(1.15rem,4.5vw,1.5rem);font-weight:900;margin-bottom:10px;line-height:1.6;}
+.cta-desc{font-size:.9rem;color:var(--text-sub);margin-bottom:20px;}
+
+/* ===== Form ===== */
+.form-wrapper{max-width:520px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;}
+.form-group{margin-bottom:20px;}
+.form-label{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;margin-bottom:6px;}
+.form-req{font-size:.55rem;font-weight:900;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px;}
+.form-input,.form-select,.form-textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:var(--font);background:var(--bg);transition:border-color .2s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--sky);}
+.form-input::placeholder{color:var(--text-light);}
+.form-textarea{min-height:100px;resize:vertical;}
+.form-radios,.form-checks{display:flex;gap:16px;flex-wrap:wrap;}
+.form-radio,.form-check{display:flex;align-items:center;gap:6px;font-size:.9rem;cursor:pointer;}
+.form-radio input,.form-check input{accent-color:var(--sky);width:18px;height:18px;}
+.form-submit-btn{display:block;width:100%;padding:18px;border:none;border-radius:60px;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:900;cursor:pointer;font-family:var(--font);box-shadow:0 4px 20px rgba(255,107,138,.3);transition:all .2s;}
+.form-submit-btn:hover{background:var(--accent-dark);transform:translateY(-1px);}
+.form-agree{text-align:center;font-size:.68rem;color:var(--text-light);margin-top:12px;line-height:1.7;}
+.form-agree a{color:var(--sky);text-decoration:underline;}
+
+/* ===== Footer ===== */
+.footer{background:var(--sky);color:#fff;padding:36px 0 20px;}
+.footer-name{font-size:1rem;font-weight:900;margin-bottom:6px;}
+.footer-name small{display:block;font-size:.7rem;font-weight:500;opacity:.8;}
+.footer-desc{font-size:.72rem;opacity:.8;line-height:1.9;margin-bottom:20px;}
+.footer-links-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.footer-links-row a{font-size:.72rem;color:rgba(255,255,255,.8);}
+.footer-links-row a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:12px;font-size:.6rem;opacity:.6;}
+
+/* ===== Floating CTA ===== */
+.floating-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;padding:12px 20px;transform:translateY(100%);transition:transform .3s;}
+.floating-bar.show{transform:translateY(0);}
+.floating-btn{display:block;width:100%;max-width:440px;margin:0 auto;padding:16px;border-radius:60px;text-align:center;font-size:1.05rem;font-weight:900;color:#fff;background:var(--accent);border:none;cursor:pointer;font-family:var(--font);box-shadow:0 4px 24px rgba(255,107,138,.35);animation:pulse 2.5s ease-in-out infinite;}
+.floating-btn:hover{background:var(--accent-dark);}
+@keyframes pulse{0%,100%{box-shadow:0 4px 24px rgba(255,107,138,.35)}50%{box-shadow:0 4px 24px rgba(255,107,138,.35),0 0 0 8px rgba(255,107,138,.1)}}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(min-width:768px){.container{max-width:720px;}.hero-img{aspect-ratio:16/9;}.dream-visual{aspect-ratio:21/9;}}
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="header" id="header">
   <div class="header-inner">
-    <a href="#" class="logo">
-      <div class="logo-icon">X1</div>
-      <div>
-        <div class="logo-name">XECTOR1</div>
-        <div class="logo-sub">オンラインボイトレスクール</div>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="#features">特徴</a>
-      <a href="#pricing">料金</a>
-      <a href="#voices">生徒の声</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="header-cta-btn">無料体験レッスン</a>
-    </nav>
-    <div class="mobile-menu" id="mobileMenu"><span></span><span></span><span></span></div>
+    <a href="#" class="logo-text">プロボイスミュージックスクール<small>ONLINE ボイトレ × 活動バックアップ</small></a>
+    <a href="#contact" class="header-cta">体験レッスンを受けてみる</a>
   </div>
 </header>
 
+<!-- ===== Hero ===== -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-visual">
-      <div class="hero-illust">
-        <div class="hero-illust-inner">
-          <span class="hero-illust-emoji">🎤</span>
-          <span class="hero-illust-text">うたってみた動画をアップしてみたい！</span>
-        </div>
-        <span class="hero-illust-bubble">🎵 歌ってみた</span>
-        <span class="hero-illust-bubble">🎧 MIX</span>
-        <span class="hero-illust-bubble">📱 SNS</span>
-        <span class="hero-illust-bubble">🎬 動画制作</span>
-      </div>
+  <div class="hero-img ph" style="aspect-ratio:3/4;">
+    <span class="hero-img-placeholder">📸 メインビジュアル写真</span>
+    <div class="hero-img-inner">
+      <p>歌が好き。歌うことが好き。<br>だから、もっと上を目指したい。<br>それが、ここを選んだ理由。</p>
     </div>
-    <div class="hero-copy">
-      <h1>オンラインで始める<br><em>歌ってみた</em>レッスン</h1>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-tagline">初心者からプロ志望まで。</div>
+    <h1>オンライン<em>ボイトレ</em> ×<br><em>活動バックアップ</em>スクール</h1>
+    <p class="hero-school-name">プロボイスミュージックスクール</p>
+
+    <p style="font-size:.78rem;color:var(--text-light);margin-bottom:8px;">＼ 初心者歓迎の低料金 ／</p>
+    <div class="hero-price-box">
+      <span class="hero-price-label">月々</span>
+      <span class="hero-price-label">¥</span>
+      <span class="hero-price-num">3,500</span>
+      <span class="hero-price-suffix">〜</span>
     </div>
-    <p class="hero-sub">ボイトレ・カバー動画制作・SNS発信まで。<br>あなたの「歌いたい」を、プロ講師が<br>マンツーマンでサポートします。</p>
-    <div class="hero-buttons">
-      <a href="#contact" class="btn-cta btn-cta-primary">✨ 無料体験レッスンに申し込む</a>
-      <a href="#" class="btn-cta btn-cta-line">💬 LINEで質問する</a>
-    </div>
-    <p class="hero-note">※ オンラインで全国どこからでも受講OK・60分の体験が無料</p>
+    <p class="hero-price-note">（税込¥3,850〜）</p>
+
+    <p class="hero-desc">スマホやパソコンを使って自宅など全国どこでも受講OK。プロのボイストレーナーによるマンツーマンレッスンに加え、<strong style="color:var(--sky);font-weight:700;">SNS活動のプロデュース・楽曲制作まで一貫サポート。</strong>12ヶ月後にはオリジナル楽曲の全国リリースも実現できます。</p>
+
+    <a href="#contact" class="btn-cta">体験レッスンを受けてみる</a>
+    <p class="hero-note">※ 60分の無料体験レッスン ／ オンラインで全国対応</p>
   </div>
 </section>
 
+<!-- Campaign -->
 <div class="campaign">
-  <div class="campaign-inner">
-    <span class="campaign-badge">期間限定</span>
-    <span class="campaign-text">無料体験レッスン申込みで <strong>入会金 ¥0</strong></span>
-    <span class="campaign-date">2026年4月30日受付分まで</span>
-  </div>
+  <div class="campaign-text">今なら無料体験レッスン申込みで <strong>入会金 ¥0</strong></div>
+  <div class="campaign-date">2026年4月30日受付分まで</div>
 </div>
 
+<!-- ===== Pain Points ===== -->
 <section class="section">
   <div class="container">
-    <div class="section-head">
-      <div class="section-title">こんなお悩みありませんか？</div>
-    </div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">こんな想い、ありませんか？</span></h2></div>
     <div class="pain-list reveal">
-      <div class="pain-item">歌ってみた動画を作ってみたい</div>
-      <div class="pain-item">ボカロ曲を歌いたい</div>
-      <div class="pain-item">高音を出したい</div>
-      <div class="pain-item">ミックス・マスタリングを自分でしたい</div>
-      <div class="pain-item">歌がうまくなりたい</div>
-      <div class="pain-item">レコーディングしたい</div>
+      <div class="pain-item">音楽で食べていきたい</div>
+      <div class="pain-item">上達だけじゃなく実際に活動してみたい</div>
+      <div class="pain-item">オリジナル曲をリリースしてみたい</div>
+      <div class="pain-item">SNSのフォロワーが伸びない</div>
+      <div class="pain-item">事務所に入りたいけど何から始めれば…</div>
+      <div class="pain-item">一人で活動する限界を感じている</div>
     </div>
   </div>
 </section>
 
+<!-- ===== 受講方法 ===== -->
+<section class="section section-sky">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">受講方法</span></h2></div>
+    <p class="howto-text">オンラインレッスンの受講に必要なものは<br><strong>スマホ や タブレット や PC と ネット</strong> のみ</p>
+    <p style="font-size:.72rem;color:var(--text-light);text-align:center;">※イヤホン等の備品は別途ご用意ください。</p>
+
+    <div class="howto-icons">
+      <div class="howto-icon">📱</div>
+      <div class="howto-icon">💻</div>
+      <div class="howto-icon">🖥️</div>
+      <div class="howto-plus">＋</div>
+      <div class="howto-icon">📶</div>
+    </div>
+
+    <p class="howto-text">Zoomを使って<br><strong>URLをクリックするだけでレッスン開始！</strong></p>
+
+    <div class="howto-box reveal">
+      <div class="howto-box-title">初めてのオンラインレッスンでも安心</div>
+      <div class="howto-box-desc">ご自身のネット環境や接続トラブル等々、<br>専門のスタッフが<strong style="color:var(--sky);">丁寧にサポート</strong>します。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 選ばれる理由 ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">選ばれる理由</span></h2></div>
+    <div class="reason-list reveal">
+      <div class="reason-item"><div class="reason-check">✓</div>自宅やカラオケ店など、全国どこでも好きな時間に受講できる！</div>
+      <div class="reason-item"><div class="reason-check">✓</div>低料金で続けやすい月額 ¥3,500〜 でボーカルレッスンを始められる！</div>
+      <div class="reason-item"><div class="reason-check">✓</div>12ヶ月でオリジナル楽曲制作 → 全国リリースのチャンスあり！</div>
+      <div class="reason-item"><div class="reason-check">✓</div>好きなボーカル講師を自由に選べるから安心。</div>
+      <div class="reason-item"><div class="reason-check">✓</div>SNS活動のプロデュース・マネジメントまでバックアップ！</div>
+      <div class="reason-item"><div class="reason-check">✓</div>累計800組超えのプロデュース実績。チャンネル収益化実績あり。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Dream ===== -->
+<section class="dream">
+  <div class="dream-visual">
+    <div class="dream-visual-inner">
+      <div class="dream-visual-en">ORIGINAL RELEASE</div>
+      <h2>12ヶ月後に<br><em>オリジナル楽曲リリース</em></h2>
+      <p class="dream-visual-sub">世界185ヵ国・55以上のプラットフォームへ<br>あなたの楽曲を公式配信。</p>
+    </div>
+  </div>
+  <div class="dream-body">
+    <div class="dream-card reveal">
+      <h3 class="dream-card-title">専属契約 ×<br>オリジナル楽曲制作プロジェクト</h3>
+      <p class="dream-card-desc">本プログラムで活動の基礎を固め、活動状況や進行条件を満たせば専属契約を行い、オリジナル楽曲制作・全国リリースでデビューいただきます。</p>
+      <div class="dream-platforms">
+        <span class="dream-platform">Apple Music</span>
+        <span class="dream-platform">Spotify</span>
+        <span class="dream-platform">Amazon Music</span>
+        <span class="dream-platform">LINE MUSIC</span>
+        <span class="dream-platform">AWA</span>
+        <span class="dream-platform">他 55以上</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Zero Cost ===== -->
+<section class="zero-section">
+  <div class="container reveal">
+    <div class="zero-other">他社の楽曲制作費 <s>1曲 50万円以上</s></div>
+    <div class="zero-arrow">▼</div>
+    <div class="zero-ours"><small>プロボイスなら</small><br>実質 0円</div>
+    <p class="zero-note">オリジナル楽曲の<strong>製作費・配信登録費用は実質無料。</strong><br>月額費用と初期事務手数料以外に<strong>追加費用は一切なし。</strong></p>
+  </div>
+</section>
+
+<!-- ===== Features ===== -->
 <section class="section section-gray" id="features">
   <div class="container">
-    <div class="section-head">
-      <div class="section-en">LESSON'S FEATURE</div>
-      <div class="section-title"><em>XECTOR1</em> の特徴</div>
-    </div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">プログラム内容</span></h2></div>
     <div class="feature-list">
       <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 01</div>
-          <h3 class="feature-title">担当制のマンツーマンレッスン</h3>
-          <p class="feature-desc">あなた専属の講師が、レベルや目標に合わせたカリキュラムを設計します。基礎からボイトレしたい方も、作品作りから始めたい方も安心。<strong>担当制だからアドバイスが一貫して、成長スピードが違います。</strong>あなただけのカリキュラムなので質問も気軽にでき、レッスンに集中できます。</p>
-        </div>
+        <div class="feature-num-label">01</div>
+        <h3 class="feature-title">月2回の活動プロデュース＆<br>ボイストレーニング</h3>
+        <p class="feature-desc">プロのボイストレーナーとマンツーマンで歌唱力を高める強化プログラム。個別で<strong>プロデューサーによるプロデュースミーティング</strong>を実施。今「やるべきこと」を明確にするから迷わず活動を伸ばせます。</p>
+        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 レッスン風景</div>
       </div>
       <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 02</div>
-          <h3 class="feature-title">ボカロ曲をかっこよく歌うコツをお伝えします</h3>
-          <p class="feature-desc">ボカロ曲は音域も広く、テクニックを使った表現力も多彩です。まずは好きな歌い手がどのように歌っているのかを一緒に聞きながら、<strong>ウィスパーボイス、がなり、エッジ、ビブラート</strong>などテクニックがどのように使われているかを確認。その上でゆっくりとそのテクニックを入れて歌えるようにしていきます。</p>
-        </div>
+        <div class="feature-num-label">02</div>
+        <h3 class="feature-title">チームでの活動サポート体制</h3>
+        <p class="feature-desc"><strong>迷いなく活動に打ち込める専用の相談窓口</strong>を設置。一人で悩まずチームと一緒に活動を加速させます。</p>
+        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 サポート体制</div>
       </div>
       <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 03</div>
-          <h3 class="feature-title">ボイトレもしっかりレッスンします</h3>
-          <p class="feature-desc">表現力をつけるためには<strong>基礎も大切</strong>です。腹式呼吸や声を響かせる身体の使い方を1から学んでいきましょう。レコーディングをすると自分の苦手なところが気になり、再度ボイストレーニングをしたいという気持ちが出てきます。それは前に比べて下手になったのではなく上達した証です。</p>
-        </div>
+        <div class="feature-num-label">03</div>
+        <h3 class="feature-title">外部案件の交渉・調整は<br>マネージャーがサポート</h3>
+        <p class="feature-desc">企業コラボや番組出演など<strong>交渉・調整は担当スタッフが担当。</strong>あなたは「活動」そのものに全力で向き合える環境です。</p>
+        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 マネージャーサポート</div>
       </div>
       <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 04</div>
-          <h3 class="feature-title">歌ってみた動画を投稿してみたい</h3>
-          <p class="feature-desc">歌ってみた動画を作る工程は、①レコーディング → ②ミックス・マスタリング → ③動画撮影 → ④動画編集。まずは<strong>講師と一緒に歌ってみた動画を作ってみましょう。</strong>2本、3本と作っていくと作り方に慣れ、自分でもチャレンジできるようになります。</p>
-        </div>
-      </div>
-      <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09c-.658.003-1.25.396-1.51 1z"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 05</div>
-          <h3 class="feature-title">ミックス・マスタリングを学びたい</h3>
-          <p class="feature-desc">ピッチ修正、イコライザー、コンプレッサーなど複雑に思えるかもしれませんが、<strong>講師と一緒に曲を仕上げながら行う</strong>ので理解がしやすく、すぐに使える技術になります。ミックスマスタリングを覚えると歌い手としてレベルアップできます。</p>
-        </div>
-      </div>
-      <div class="feature-item reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
-        <div>
-          <div class="feature-num">FEATURE 06</div>
-          <h3 class="feature-title">SNS発信・コーチングまでカバー</h3>
-          <p class="feature-desc">歌がうまくなるだけでは終わりません。<strong>YouTube・TikTok・InstagramなどSNSでの発信方法、フォロワーの増やし方</strong>までプロがアドバイス。アウトプットすることで自分が目指す地点との差がわかり、何をすればいいかが明確になります。</p>
-        </div>
+        <div class="feature-num-label">04</div>
+        <h3 class="feature-title">公式HP・SNSでの掲載・拡散</h3>
+        <p class="feature-desc"><strong>事務所のHPやSNSアカウントでも積極的に紹介・発信。</strong>チームであなたの認知拡大を後押しします。</p>
+        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 SNS拡散</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="process">
+<!-- ===== Roadmap ===== -->
+<section class="section" id="roadmap">
   <div class="container">
-    <div class="section-head">
-      <div class="section-en">LESSON FLOW</div>
-      <div class="section-title">レッスンの流れ</div>
-      <p class="section-desc">無料体験からスタート。あなたのペースで、着実にレベルアップ。</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step reveal"><div class="process-num">1</div><div class="process-icon">📝</div><h4 class="process-title">無料体験に<br>申し込む</h4><p class="process-desc">フォームまたはLINEからお気軽にどうぞ</p></div>
-      <div class="process-step reveal"><div class="process-num">2</div><div class="process-icon">💬</div><h4 class="process-title">カウンセリング</h4><p class="process-desc">目標やレベルをヒアリング、カリキュラムを設計</p></div>
-      <div class="process-step reveal"><div class="process-num">3</div><div class="process-icon">🎤</div><h4 class="process-title">レッスン開始</h4><p class="process-desc">Zoomでマンツーマン、月2回〜のペースで</p></div>
-      <div class="process-step reveal"><div class="process-num">4</div><div class="process-icon">🚀</div><h4 class="process-title">作品投稿・<br>活動開始</h4><p class="process-desc">歌ってみた動画を制作・投稿、SNS発信もサポート</p></div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">成長のロードマップ</span></h2><p class="section-desc">頑張った分はしっかり「成果」と「活動収益」として還元されます。</p></div>
+    <div class="roadmap-list reveal">
+      <div class="roadmap-item"><div class="roadmap-badge p1">Phase<span>1</span></div><div><div class="roadmap-title">収益化の第一歩</div><div class="roadmap-desc">影響力＆実績を獲得し収益化へ。配信ライブギフティングは本人100％還元。</div></div></div>
+      <div class="roadmap-item"><div class="roadmap-badge p2">Phase<span>2</span></div><div><div class="roadmap-title">イベント・グッズでプラス収益</div><div class="roadmap-desc">リアル/配信イベントやグッズ物販でマネタイズ強化。</div></div></div>
+      <div class="roadmap-item"><div class="roadmap-badge p3">Phase<span>3</span></div><div><div class="roadmap-title">オリジナル楽曲で音楽収益を獲得</div><div class="roadmap-desc">12ヶ月継続で楽曲制作スタート。配信収益・タイアップ等、複数の収益ルートへ。</div></div></div>
+      <div class="roadmap-item"><div class="roadmap-badge p4">Phase<span>4</span></div><div><div class="roadmap-title">専属契約へステップアップ</div><div class="roadmap-desc">専属アーティスト契約。事務所による全面プロデュース＆バックアップ体制。</div></div></div>
     </div>
   </div>
 </section>
 
-<section class="section section-pale" id="pricing">
+<!-- ===== Pricing ===== -->
+<section class="section section-gray" id="pricing">
   <div class="container">
-    <div class="section-head">
-      <div class="section-en">LESSON FEE</div>
-      <div class="section-title">レッスン料金</div>
-      <p class="section-desc">年会費・教材費は無料です！レッスンは1回60分。</p>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">料金（月謝）</span></h2><p class="section-desc">年会費・教材費は無料！</p></div>
+    <div class="price-block reveal">
+      <div class="price-block-label">25分レッスン</div>
+      <div class="price-row"><span class="price-freq">月1回</span><span class="price-amount">¥3,250-<span class="price-tax">（税込¥3,575）</span></span></div>
+      <div class="price-row"><span class="price-freq">月2回</span><span class="price-amount">¥6,080-<span class="price-tax">（税込¥6,688）</span></span></div>
+      <div class="price-row"><span class="price-freq">月3回</span><span class="price-amount">¥8,250-<span class="price-tax">（税込¥9,075）</span></span></div>
+      <div class="price-row"><span class="price-freq">月4回</span><span class="price-amount">¥10,800-<span class="price-tax">（税込¥11,880）</span></span></div>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <div class="pricing-plan-name">STANDARD</div>
-        <div class="pricing-title">月2回プラン</div>
-        <div class="pricing-price"><span class="pricing-yen">¥</span><span class="pricing-amount">11,000</span></div>
-        <div class="pricing-period">（税込）/ 月</div>
-        <div class="pricing-features">
-          <div class="pricing-feat">60分 × 月2回のマンツーマンレッスン</div>
-          <div class="pricing-feat">Zoomオンラインレッスン</div>
-          <div class="pricing-feat">担当講師制</div>
-          <div class="pricing-feat">LINEでいつでも質問OK</div>
-        </div>
-        <button class="pricing-btn" onclick="location.href='#contact'">無料体験に申し込む</button>
-      </div>
-      <div class="pricing-card recommended reveal">
-        <div class="pricing-ribbon">おすすめ</div>
-        <div class="pricing-plan-name">GROWTH</div>
-        <div class="pricing-title">月4回プラン</div>
-        <div class="pricing-price"><span class="pricing-yen">¥</span><span class="pricing-amount">19,800</span></div>
-        <div class="pricing-period">（税込）/ 月</div>
-        <div class="pricing-features">
-          <div class="pricing-feat">60分 × 月4回のマンツーマンレッスン</div>
-          <div class="pricing-feat">Zoomオンラインレッスン</div>
-          <div class="pricing-feat">担当講師制</div>
-          <div class="pricing-feat">LINEでいつでも質問OK</div>
-          <div class="pricing-feat">動画制作サポート付き</div>
-          <div class="pricing-feat">SNSコーチング付き</div>
-        </div>
-        <button class="pricing-btn" onclick="location.href='#contact'">無料体験に申し込む</button>
-      </div>
+    <div class="price-block reveal">
+      <div class="price-block-label">45分レッスン</div>
+      <div class="price-row"><span class="price-freq">月1回</span><span class="price-amount">¥3,980-<span class="price-tax">（税込¥4,378）</span></span></div>
+      <div class="price-row"><span class="price-freq">月2回</span><span class="price-amount">¥7,850-<span class="price-tax">（税込¥8,635）</span></span></div>
+      <div class="price-row"><span class="price-freq">月3回</span><span class="price-amount">¥11,480-<span class="price-tax">（税込¥12,628）</span></span></div>
+      <div class="price-row"><span class="price-freq">月4回</span><span class="price-amount">¥14,650-<span class="price-tax">（税込¥16,115）</span></span></div>
     </div>
-    <p class="pricing-note">※ 上記時間に入れ替え5分ほどを含みます。</p>
+    <div class="price-block reveal">
+      <div class="price-block-label">60分レッスン</div>
+      <div class="price-row"><span class="price-freq">月2回</span><span class="price-amount">¥12,000-<span class="price-tax">（税込¥13,200）</span></span></div>
+      <div class="price-row"><span class="price-freq">月3回</span><span class="price-amount">¥16,300-<span class="price-tax">（税込¥17,930）</span></span></div>
+      <div class="price-row"><span class="price-freq">月4回</span><span class="price-amount">¥20,400-<span class="price-tax">（税込¥22,440）</span></span></div>
+    </div>
+    <div class="price-extra reveal">
+      <div class="price-extra-row"><span>入会金</span><span>¥3,000</span></div>
+      <div class="price-extra-row" style="font-size:.78rem;color:var(--text-sub);">※ 体験レッスン当日入会の場合は ¥2,000</div>
+    </div>
+    <div class="pricing-highlight reveal">この月額費用と初期事務手数料以外に、<strong>必須となる追加費用は一切ありません。</strong></div>
   </div>
 </section>
 
+<!-- ===== Voices ===== -->
 <section class="section" id="voices">
   <div class="container">
-    <div class="section-head">
-      <div class="section-en">STUDENT'S VOICE</div>
-      <div class="section-title">生徒の声</div>
-    </div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">参加者の声</span></h2></div>
     <div class="voice-list">
       <div class="voice-card reveal">
-        <div class="voice-quote">"</div>
-        <h4 class="voice-header">レコーディングした時はとても達成感があり楽しかったです。</h4>
-        <p class="voice-body">先生がとてもわかりやすく教えてくださり、成長を感じられるレッスンを受けることができます。レッスンのなかで自分の苦手な部分をすんなりと解消できることが可能であることを感じて驚いています。練習して歌えるようになった曲をレコーディングした時はとても達成感があり楽しかったです。</p>
-        <div class="voice-footer">
-          <div class="voice-avatar">A</div>
-          <div><div class="voice-name">A.Kさん</div><div class="voice-detail">20代・歌ってみた歴半年</div><div class="voice-tags"><span class="voice-tag">ボーカルレッスン</span><span class="voice-tag pink">歌ってみた</span></div></div>
+        <div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div>
+        <div class="voice-body-wrap">
+          <h4 class="voice-header">プロデューサーと方向性を決められるのが心強いです。</h4>
+          <p class="voice-body">一人で活動していた時は何から手をつけていいか分からなかったのですが、毎月のプロデュースミーティングで「今やるべきこと」が明確になり、迷わず活動に集中できています。</p>
+          <div class="voice-footer"><div class="voice-avatar">A</div><div><div class="voice-name">A.Kさん</div><div class="voice-detail">20代・歌い手活動歴1年</div><div class="voice-tags"><span class="voice-tag">ボイトレ</span><span class="voice-tag pink">SNSコーチング</span></div></div></div>
         </div>
       </div>
       <div class="voice-card reveal">
-        <div class="voice-quote">"</div>
-        <h4 class="voice-header">丁寧に教えてもらえて、楽しかったです。</h4>
-        <p class="voice-body">もっと上達したいなー！と思っていたレッスンがあったので入りました。ボーカルでは好きな曲を選べて、自分が上手だと思っていたのが直されたり、色々な発見がありました。これからは、もっと歌も上達したいです。</p>
-        <div class="voice-footer">
-          <div class="voice-avatar">M</div>
-          <div><div class="voice-name">M.Tさん</div><div class="voice-detail">10代・ボイトレ歴3ヶ月</div><div class="voice-tags"><span class="voice-tag">ボーカルレッスン</span><span class="voice-tag pink">歌ってみた</span></div></div>
+        <div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div>
+        <div class="voice-body-wrap">
+          <h4 class="voice-header">オリジナル楽曲のリリースが現実になりました。</h4>
+          <p class="voice-body">他のスクールでは楽曲制作に数十万円かかると聞いて諦めかけていましたが、実質無料でリリースまでサポートしてもらえると知って即決しました。</p>
+          <div class="voice-footer"><div class="voice-avatar">M</div><div><div class="voice-name">M.Tさん</div><div class="voice-detail">20代・活動歴2年</div><div class="voice-tags"><span class="voice-tag">楽曲制作</span><span class="voice-tag pink">全国リリース</span></div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== FAQ ===== -->
 <section class="section section-gray" id="faq">
   <div class="container">
-    <div class="section-head">
-      <div class="section-en">FAQ</div>
-      <div class="section-title">よくあるご質問</div>
-    </div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">よくあるご質問</span></h2></div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">全くの初心者ですが大丈夫ですか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">はい、大丈夫です！生徒さんの多くが未経験からスタートしています。あなたのレベルに合わせたカリキュラムを組みますので、基礎の基礎から安心して学べます。</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">必要な機材はありますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">まずはスマートフォンやPC、イヤホンがあればOKです。レコーディングに進む際は、講師からおすすめの機材をご紹介します。無理に高い機材を揃える必要はありません。</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">レッスンのスケジュールは柔軟に変更できますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">はい。講師と直接スケジュールを調整できるので、シフト制のお仕事や学校の予定に合わせて柔軟にレッスン日時を決められます。</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">途中で退会はできますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">はい、いつでも退会可能です。長期契約の縛りはありません。月単位でのご契約となりますので、お気軽にお試しください。</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">無料体験レッスンの内容は？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">60分間のオンラインレッスンです。前半にカウンセリングで目標やお悩みをヒアリングし、後半に実際のボイストレーニングを体験していただけます。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">全くの初心者ですが大丈夫ですか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">はい、大丈夫です！生徒さんの多くが未経験からスタートしています。あなたのレベルに合わせたカリキュラムで基礎の基礎から安心して学べます。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">楽曲制作に追加費用はかかりますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">12ヶ月継続し活動条件を満たした方には、楽曲制作費・配信登録費用ともに実質無料で対応しています。月額費用と初期事務手数料以外に必須の追加費用はありません。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">必要な機材はありますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">スマホやPC、イヤホンがあればOKです。レコーディングに進む際は講師からおすすめ機材をご紹介します。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">途中で退会はできますか？</span><span class="faq-q-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">はい、いつでも退会可能です。長期契約の縛りはなく、月単位でのご契約です。</div></div></div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-banner">
   <div class="container">
-    <h2 class="cta-title">まずは60分の<em style="font-style:normal;color:var(--primary);">無料体験</em>から<br>はじめてみませんか？</h2>
-    <p class="cta-desc">あなたの「歌いたい」を、今日からカタチにしましょう。</p>
-    <div class="cta-buttons">
-      <a href="#contact" class="btn-cta btn-cta-primary">✨ 無料体験レッスンに申し込む</a>
-      <a href="#" class="btn-cta btn-cta-line">💬 LINEで質問・申込み</a>
-    </div>
+    <h2 class="cta-title">あなたの「歌いたい」を、<br>デビューにつなげよう。</h2>
+    <p class="cta-desc">まずは60分の無料体験レッスンから。</p>
+    <a href="#contact" class="btn-cta" style="max-width:400px;">体験レッスンを受けてみる</a>
   </div>
 </section>
 
+<!-- Form -->
 <section class="section" id="contact">
   <div class="container">
-    <div class="section-head">
-      <div class="section-title">無料体験レッスン お申し込みフォーム</div>
-      <p class="section-desc">まずは60分間のお試し！</p>
-    </div>
+    <div class="section-head"><h2 class="section-title"><span class="section-title-hl">体験レッスン予約</span></h2><p class="section-desc">無料体験レッスン随時受付中です♪</p></div>
     <div class="form-wrapper">
       <div class="form-group"><label class="form-label">お名前 <span class="form-req">必須</span></label><input type="text" class="form-input" placeholder="例）山田 太郎"></div>
       <div class="form-group"><label class="form-label">メールアドレス <span class="form-req">必須</span></label><input type="email" class="form-input" placeholder="例）example@email.com"></div>
       <div class="form-group"><label class="form-label">電話番号 <span class="form-req">必須</span></label><input type="tel" class="form-input" placeholder="例）090-1234-5678"></div>
-      <div class="form-group"><label class="form-label">年齢確認 <span class="form-req">必須</span></label><div class="form-radios"><label class="form-radio"><input type="radio" name="age" checked> 18歳以上</label><label class="form-radio"><input type="radio" name="age"> 18歳未満</label><label class="form-radio"><input type="radio" name="age"> 13歳未満</label></div></div>
-      <div class="form-group"><label class="form-label">希望コース <span class="form-req">必須</span></label><select class="form-select"><option>以下から選択してください。</option><option>ボーカルレッスン</option><option>ボカロ・歌ってみた教室</option><option>MIX・マスタリングレッスン</option><option>SNSコーチング</option><option>総合コース</option></select></div>
-      <div class="form-group"><label class="form-label">ご希望の時間帯（複数選択可）<span class="form-req">必須</span></label><div class="form-checks"><label class="form-check"><input type="checkbox"> 10時〜12時</label><label class="form-check"><input type="checkbox"> 12時〜16時</label><label class="form-check"><input type="checkbox"> 16時〜19時</label><label class="form-check"><input type="checkbox"> 19時〜22時</label><label class="form-check"><input type="checkbox"> 指定なし</label></div></div>
-      <div class="form-group"><label class="form-label">ご質問・ご要望</label><textarea class="form-textarea" placeholder="その他、ご質問やご要望がありましたらご記入ください。"></textarea></div>
-      <button type="button" class="form-submit-btn" id="submitBtn">送信する</button>
+      <div class="form-group"><label class="form-label">年齢確認 <span class="form-req">必須</span></label><div class="form-radios"><label class="form-radio"><input type="radio" name="age" checked> 18歳以上</label><label class="form-radio"><input type="radio" name="age"> 18歳未満</label></div></div>
+      <div class="form-group"><label class="form-label">希望コース <span class="form-req">必須</span></label><select class="form-select"><option>以下から選択してください。</option><option>ボーカルレッスン</option><option>ボカロ・歌ってみた教室</option><option>SNSコーチング</option><option>総合プロデュースコース</option></select></div>
+      <div class="form-group"><label class="form-label">ご希望の時間帯 <span class="form-req">必須</span></label><div class="form-checks"><label class="form-check"><input type="checkbox"> 10時〜12時</label><label class="form-check"><input type="checkbox"> 12時〜16時</label><label class="form-check"><input type="checkbox"> 16時〜19時</label><label class="form-check"><input type="checkbox"> 19時〜22時</label><label class="form-check"><input type="checkbox"> 指定なし</label></div></div>
+      <div class="form-group"><label class="form-label">ご質問・ご要望</label><textarea class="form-textarea" placeholder="ご質問やご要望がありましたらご記入ください。"></textarea></div>
+      <button type="button" class="form-submit-btn" id="submitBtn">体験レッスンを受けてみる</button>
       <p class="form-agree">「<a href="#">個人情報の取り扱い</a>」を確認後、同意の上送信してください。</p>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
-  <div class="container-wide">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo"><div class="footer-logo-icon">X1</div><div class="footer-logo-text">XECTOR1</div></div>
-        <p class="footer-desc">オンライン完結のボイストレーニング＆アーティスト育成スクール。<br>歌ってみた・カバー動画制作・SNS発信まで、あなたの「歌いたい」を全力でサポートします。</p>
-      </div>
-      <div><div class="footer-heading">メニュー</div><div class="footer-links"><a href="#features">特徴</a><a href="#process">レッスンの流れ</a><a href="#pricing">料金</a><a href="#voices">生徒の声</a><a href="#faq">FAQ</a></div></div>
-      <div><div class="footer-heading">お問い合わせ</div><div class="footer-links"><a href="#contact">無料体験レッスン</a><a href="#">LINEでお問い合わせ</a><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a></div></div>
+  <div class="container">
+    <div class="footer-name">プロボイスミュージックスクール<small>オンラインボイストレーニング × 活動バックアップスクール</small></div>
+    <p class="footer-desc">初心者からプロ志望まで。スマホ・タブレット・PCとネット環境があれば、全国どこからでもプロのボイストレーナーによるマンツーマンレッスンを受講できます。SNS活動のプロデュースから楽曲制作・全国リリースまで一貫サポート。</p>
+    <div class="footer-links-row">
+      <a href="#features">プログラム</a><a href="#roadmap">ロードマップ</a><a href="#pricing">料金</a><a href="#voices">参加者の声</a><a href="#faq">FAQ</a><a href="#contact">体験レッスン</a><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a>
     </div>
-    <div class="footer-bottom">© 2026 XECTOR1（セクターワン）All Rights Reserved.</div>
+    <div class="footer-bottom">© 2026 プロボイスミュージックスクール All Rights Reserved.</div>
   </div>
 </footer>
 
+<!-- Floating CTA -->
 <div class="floating-bar" id="floatingBar">
-  <a href="#contact" class="floating-btn floating-btn-cta">🎤 無料体験レッスン</a>
-  <a href="#" class="floating-btn floating-btn-line">💬 LINEで申込み</a>
+  <a href="#contact" class="floating-btn">体験レッスンを受けてみる</a>
 </div>
 
 <script>
-const header=document.getElementById('header'),floatingBar=document.getElementById('floatingBar');
-window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>30);floatingBar.classList.toggle('show',scrollY>500);});
-const ro=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');ro.unobserve(el.target);}});},{threshold:0.12});
+const h=document.getElementById('header'),f=document.getElementById('floatingBar');
+window.addEventListener('scroll',()=>{h.classList.toggle('scrolled',scrollY>30);f.classList.toggle('show',scrollY>500);});
+const ro=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');ro.unobserve(el.target);}});},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement,w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});});});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY-60,behavior:'smooth'});});});
 document.getElementById('submitBtn').addEventListener('click',()=>{alert('お申し込みありがとうございます！\n確認メールをお送りしますので、しばらくお待ちください。');});
 </script>
 </body>
