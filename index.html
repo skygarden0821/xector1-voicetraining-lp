@@ -13,249 +13,261 @@
   --accent:#FF6B8A;--accent-dark:#E55A78;--accent-pale:#FFF0F3;
   --yellow:#FFD43B;--yellow-pale:#FFFAE6;--yellow-marker:rgba(255,213,59,.45);
   --green:#06C755;--green-dark:#05A648;
-  --text:#222;--text-sub:#555;--text-light:#999;
-  --bg:#FFF;--bg-gray:#F6F8FA;--border:#E4E8EC;
-  --font:'Zen Maru Gothic','Noto Sans JP',sans-serif;
+  --text:#1a1a1a;--text-sub:#555;--text-light:#999;
+  --bg:#FFF;--bg-gray:#F5F7F9;--border:#E2E6EA;
+  --gothic:'Noto Sans JP',sans-serif;
+  --round:'Zen Maru Gothic','Noto Sans JP',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;}
+body{font-family:var(--round);color:var(--text);background:var(--bg);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;}
 img{max-width:100%;height:auto;display:block;}
 a{text-decoration:none;color:inherit;}
 ul{list-style:none;}
 .container{max-width:640px;margin:0 auto;padding:0 20px;}
-.hl{background:linear-gradient(transparent 60%,var(--yellow-marker) 60%);padding:0 4px;}
-.ph{width:100%;background:#E2EFF7;border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--sky-dark);font-size:.85rem;font-weight:700;position:relative;overflow:hidden;}
-.ph::after{content:'※ 写真を差し替え';position:absolute;bottom:8px;right:12px;font-size:.55rem;color:rgba(0,0,0,.18);font-weight:400;}
+.hl{background:linear-gradient(transparent 60%,var(--yellow-marker) 60%);padding:0 2px;}
+.ph{width:100%;background:linear-gradient(135deg,#e6f0f8 0%,#d8e8f3 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--sky-dark);font-size:.82rem;font-weight:700;position:relative;overflow:hidden;border:1px solid rgba(74,173,232,.08);}
+.ph::after{content:'※ 写真を差し替え';position:absolute;bottom:8px;right:12px;font-size:.5rem;color:rgba(0,0,0,.15);font-weight:400;}
 
-/* Header */
-.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-.header.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.05);}
+/* ===== Header ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+.header.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.06);}
 .header-inner{max-width:640px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
-.logo-text{font-weight:900;font-size:.88rem;color:var(--text);line-height:1.3;}
-.logo-text small{display:block;font-size:.52rem;font-weight:500;color:var(--text-sub);}
-.header-cta{background:var(--green);color:#fff;font-size:.72rem;font-weight:700;padding:8px 14px;border-radius:30px;white-space:nowrap;}
+.logo-text{font-family:var(--gothic);font-weight:900;font-size:.82rem;color:var(--text);line-height:1.3;letter-spacing:.02em;}
+.logo-text small{display:block;font-size:.5rem;font-weight:500;color:var(--text-sub);letter-spacing:.04em;}
+.header-cta{background:var(--green);color:#fff;font-size:.68rem;font-weight:700;padding:8px 14px;border-radius:30px;white-space:nowrap;font-family:var(--gothic);letter-spacing:.02em;transition:background .2s;}
+.header-cta:hover{background:var(--green-dark);}
 
-/* Hero */
+/* ===== Hero ===== */
 .hero{padding:66px 0 0;}
-.hero-img{width:100%;aspect-ratio:3/4;background:linear-gradient(180deg,#e8f0f6,#d0e4f0);display:flex;align-items:flex-end;position:relative;overflow:hidden;}
-.hero-img-inner{position:absolute;bottom:0;left:0;right:0;padding:28px 24px 24px;background:linear-gradient(0deg,rgba(0,0,0,.5) 0%,transparent 100%);}
-.hero-img-inner p{color:rgba(255,255,255,.92);font-size:1rem;line-height:1.9;font-weight:500;}
-.hero-img-ph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.2rem;color:rgba(0,0,0,.12);}
+.hero-img{width:100%;aspect-ratio:3/4;background:linear-gradient(180deg,#dce8f0,#c5d8e8);position:relative;overflow:hidden;}
+.hero-img-inner{position:absolute;bottom:0;left:0;right:0;padding:32px 24px 28px;background:linear-gradient(0deg,rgba(0,0,0,.55) 0%,transparent 100%);}
+.hero-img-inner p{color:rgba(255,255,255,.95);font-size:.95rem;line-height:2;font-weight:400;letter-spacing:.04em;}
+.hero-img-ph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.1rem;color:rgba(0,0,0,.1);}
 
-.hero-body{padding:28px 20px 36px;text-align:center;max-width:640px;margin:0 auto;}
-.hero-tagline{font-size:1.1rem;color:var(--sky);font-weight:900;margin-bottom:4px;}
-.hero h1{font-size:clamp(1.45rem,5.5vw,2rem);font-weight:900;line-height:1.45;margin-bottom:4px;}
+.hero-body{padding:32px 20px 40px;text-align:center;max-width:640px;margin:0 auto;}
+.hero-tagline{font-family:var(--gothic);font-size:1.1rem;color:var(--sky);font-weight:900;margin-bottom:6px;letter-spacing:.06em;}
+.hero h1{font-family:var(--gothic);font-size:clamp(1.5rem,5.8vw,2.1rem);font-weight:900;line-height:1.4;margin-bottom:6px;letter-spacing:.02em;}
 .hero h1 em{font-style:normal;color:var(--sky);}
-.hero-school-name{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:18px;}
-.hero-price-intro{font-size:.82rem;color:var(--text-light);margin-bottom:6px;}
-.hero-price-box{display:inline-flex;align-items:baseline;gap:4px;border:2px solid var(--text);border-radius:60px;padding:10px 28px;margin-bottom:4px;background:linear-gradient(transparent 65%,var(--yellow-marker) 65%);}
-.hero-price-label{font-size:.85rem;font-weight:700;}
-.hero-price-num{font-size:2.6rem;font-weight:900;line-height:1;}
-.hero-price-suffix{font-size:.95rem;font-weight:700;}
-.hero-price-note{font-size:.72rem;color:var(--text-light);margin-bottom:24px;}
+.hero-school-name{font-family:var(--gothic);font-size:1.1rem;font-weight:700;color:var(--text-sub);margin-bottom:20px;letter-spacing:.04em;}
 
-.hero-merits{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;text-align:left;}
-.hero-merit{display:flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;line-height:1.6;}
-.hero-merit-icon{flex-shrink:0;font-size:1.1rem;}
+.hero-price-intro{font-size:.8rem;color:var(--text-light);margin-bottom:6px;letter-spacing:.08em;}
+.hero-price-box{display:inline-flex;align-items:baseline;gap:4px;border:2.5px solid var(--text);border-radius:60px;padding:10px 28px;margin-bottom:4px;background:linear-gradient(transparent 62%,var(--yellow-marker) 62%);}
+.hero-price-label{font-family:var(--gothic);font-size:.85rem;font-weight:700;}
+.hero-price-num{font-family:var(--gothic);font-size:2.8rem;font-weight:900;line-height:1;letter-spacing:-.02em;}
+.hero-price-suffix{font-family:var(--gothic);font-size:1rem;font-weight:700;}
+.hero-price-note{font-size:.7rem;color:var(--text-light);margin-bottom:28px;}
 
-.btn-cta{display:block;width:100%;max-width:420px;margin:0 auto;padding:18px;border-radius:60px;text-align:center;font-size:1.1rem;font-weight:900;color:#fff;background:var(--accent);border:none;cursor:pointer;font-family:var(--font);box-shadow:0 4px 20px rgba(255,107,138,.3);transition:all .2s;}
-.btn-cta:hover{background:var(--accent-dark);transform:translateY(-1px);}
-.hero-note{margin-top:12px;font-size:.72rem;color:var(--text-light);text-align:center;}
+.hero-merits{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;text-align:left;}
+.hero-merit{display:flex;align-items:center;gap:8px;font-size:1rem;font-weight:600;line-height:1.6;color:var(--text);}
+.hero-merit-icon{flex-shrink:0;font-size:1.05rem;}
 
-/* Campaign */
+.btn-cta{display:block;width:100%;max-width:400px;margin:0 auto;padding:18px;border-radius:60px;text-align:center;font-family:var(--gothic);font-size:1.05rem;font-weight:900;color:#fff;background:var(--accent);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(255,107,138,.28);transition:all .2s;letter-spacing:.04em;}
+.btn-cta:hover{background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 6px 24px rgba(255,107,138,.35);}
+.hero-note{margin-top:14px;font-size:.7rem;color:var(--text-light);text-align:center;letter-spacing:.02em;}
+
+/* ===== Campaign ===== */
 .campaign{background:var(--yellow-pale);border-top:3px solid var(--yellow);padding:14px 20px;text-align:center;}
-.campaign-text{font-size:1rem;font-weight:700;}
-.campaign-text strong{color:var(--accent);font-size:1.3rem;}
-.campaign-date{font-size:.68rem;color:var(--text-sub);margin-top:2px;}
+.campaign-text{font-family:var(--gothic);font-size:1rem;font-weight:700;letter-spacing:.02em;}
+.campaign-text strong{color:var(--accent);font-size:1.35rem;letter-spacing:-.01em;}
+.campaign-date{font-size:.65rem;color:var(--text-sub);margin-top:2px;}
 
-/* Section */
-.section{padding:56px 0;}
+/* ===== Section ===== */
+.section{padding:60px 0;}
 .section-gray{background:var(--bg-gray);}
 .section-sky{background:var(--sky-mist);}
-.section-head{text-align:center;margin-bottom:32px;}
-.section-title{font-size:clamp(1.3rem,5vw,1.7rem);font-weight:900;line-height:1.5;}
-.section-desc{font-size:.92rem;color:var(--text-sub);margin-top:10px;line-height:2;}
+.section-head{text-align:center;margin-bottom:36px;}
+.section-title{font-family:var(--gothic);font-size:clamp(1.3rem,5vw,1.7rem);font-weight:900;line-height:1.5;letter-spacing:.02em;}
+.section-desc{font-size:.9rem;color:var(--text-sub);margin-top:10px;line-height:2;}
 
-/* Pain */
-.pain-list{display:flex;flex-direction:column;}
-.pain-item{padding:16px 20px;font-size:1.05rem;font-weight:600;text-align:center;background:var(--sky-pale);border-bottom:1px solid rgba(74,173,232,.1);}
+/* ===== Pain ===== */
+.pain-list{display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.pain-item{padding:17px 20px;font-size:1.02rem;font-weight:600;text-align:center;background:var(--sky-pale);border-bottom:1px solid rgba(74,173,232,.1);letter-spacing:.02em;}
 .pain-item:nth-child(odd){background:var(--bg);}
+.pain-item:last-child{border-bottom:none;}
 
-/* 受講のしかた */
+/* ===== 受講のしかた ===== */
 .howto-icons{display:flex;justify-content:center;align-items:center;gap:8px;margin:20px 0;flex-wrap:wrap;}
-.howto-icon{width:48px;height:48px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
-.howto-plus{font-size:1.2rem;color:var(--text-light);font-weight:700;}
+.howto-icon{width:52px;height:52px;border-radius:14px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.howto-plus{font-family:var(--gothic);font-size:1.2rem;color:var(--text-light);font-weight:700;}
 .howto-text{font-size:.95rem;color:var(--text-sub);line-height:2;text-align:center;}
 .howto-text strong{color:var(--sky);font-weight:700;}
-.howto-box{background:var(--sky-pale);border-radius:14px;padding:20px;margin-top:24px;text-align:center;}
-.howto-box-title{font-size:1rem;font-weight:700;color:var(--sky);margin-bottom:6px;}
+.howto-box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:22px 20px;margin-top:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.03);}
+.howto-box-title{font-family:var(--gothic);font-size:1rem;font-weight:700;color:var(--sky);margin-bottom:8px;letter-spacing:.02em;}
 .howto-box-desc{font-size:.88rem;color:var(--text-sub);line-height:2;}
 
-/* Reasons */
-.reason-list{display:flex;flex-direction:column;gap:16px;}
-.reason-item{display:flex;align-items:flex-start;gap:12px;font-size:1rem;line-height:1.8;}
-.reason-check{width:24px;height:24px;flex-shrink:0;margin-top:3px;background:var(--sky);border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:900;}
+/* ===== Reasons ===== */
+.reason-list{display:flex;flex-direction:column;gap:0;background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.reason-item{display:flex;align-items:flex-start;gap:14px;font-size:.98rem;line-height:1.8;padding:16px 20px;border-bottom:1px solid var(--border);font-weight:500;}
+.reason-item:last-child{border-bottom:none;}
+.reason-check{width:26px;height:26px;flex-shrink:0;margin-top:2px;background:var(--sky);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;font-weight:900;font-family:var(--gothic);}
 
-/* ボイトレSTEP */
+/* ===== ボイトレSTEP ===== */
 .step-list{display:flex;flex-direction:column;gap:0;}
-.step-item{padding:28px 0;border-bottom:1px solid var(--border);}
+.step-item{padding:36px 0;border-bottom:1px solid var(--border);}
 .step-item:last-child{border-bottom:none;padding-bottom:0;}
-.step-badge{display:inline-flex;align-items:center;gap:6px;background:var(--sky);color:#fff;font-size:.75rem;font-weight:900;padding:5px 14px;border-radius:20px;margin-bottom:10px;}
-.step-badge span{font-size:1rem;}
-.step-title{font-size:1.1rem;font-weight:900;margin-bottom:8px;line-height:1.5;}
-.step-desc{font-size:.92rem;color:var(--text-sub);line-height:2;}
-.step-photo{margin-top:14px;aspect-ratio:16/10;border-radius:14px;}
+.step-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.step-num{font-family:var(--gothic);font-size:2.2rem;font-weight:900;color:var(--sky-pale);line-height:1;letter-spacing:-.02em;position:relative;}
+.step-num::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:3px;background:var(--sky);border-radius:2px;}
+.step-label{font-family:var(--gothic);font-size:.6rem;font-weight:700;color:var(--sky);letter-spacing:.15em;text-transform:uppercase;}
+.step-title{font-family:var(--gothic);font-size:1.1rem;font-weight:800;line-height:1.5;letter-spacing:.01em;}
+.step-desc{font-size:.9rem;color:var(--text-sub);line-height:2;margin-top:8px;}
+.step-photo{margin-top:16px;aspect-ratio:16/10;border-radius:12px;}
 
-/* Dream */
-.dream-visual{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,#0a0a23,#16213E 50%,#0F3460);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.dream-visual::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(74,173,232,.12) 0%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%);animation:dg 6s ease-in-out infinite;}
-@keyframes dg{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+/* ===== Dream ===== */
+.dream-visual{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,#080818 0%,#111d35 50%,#0d2d4d);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.dream-visual::before{content:'';position:absolute;top:50%;left:50%;width:420px;height:420px;background:radial-gradient(circle,rgba(74,173,232,.1) 0%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%);animation:dg 6s ease-in-out infinite;}
+@keyframes dg{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
 .dream-visual-inner{position:relative;z-index:1;text-align:center;padding:0 24px;}
-.dream-visual-en{font-size:.65rem;font-weight:700;color:var(--sky);letter-spacing:.15em;margin-bottom:8px;}
-.dream-visual h2{color:#fff;font-size:clamp(1.4rem,6vw,2rem);font-weight:900;line-height:1.45;margin-bottom:8px;}
+.dream-visual-en{font-family:var(--gothic);font-size:.6rem;font-weight:700;color:var(--sky);letter-spacing:.2em;margin-bottom:10px;}
+.dream-visual h2{font-family:var(--gothic);color:#fff;font-size:clamp(1.4rem,6vw,2rem);font-weight:900;line-height:1.45;margin-bottom:8px;letter-spacing:.02em;}
 .dream-visual h2 em{font-style:normal;color:var(--yellow);}
-.dream-visual-sub{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.8;}
+.dream-visual-sub{color:rgba(255,255,255,.6);font-size:.85rem;line-height:1.8;letter-spacing:.02em;}
 .dream-body{padding:32px 20px;max-width:640px;margin:0 auto;}
-.dream-card{background:var(--bg);border:2px solid var(--sky);border-radius:16px;padding:24px 20px;margin-bottom:20px;}
-.dream-card-title{font-size:1.15rem;font-weight:900;text-align:center;margin-bottom:10px;line-height:1.5;}
-.dream-card-desc{font-size:.92rem;color:var(--text-sub);line-height:2;}
-.dream-platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;}
-.dream-platform{background:var(--sky-pale);padding:5px 12px;border-radius:20px;font-size:.72rem;font-weight:600;color:var(--sky-dark);}
+.dream-card{background:var(--bg);border:2px solid var(--sky);border-radius:16px;padding:28px 22px;margin-bottom:20px;box-shadow:0 4px 24px rgba(74,173,232,.06);}
+.dream-card-title{font-family:var(--gothic);font-size:1.12rem;font-weight:900;text-align:center;margin-bottom:12px;line-height:1.55;letter-spacing:.01em;}
+.dream-card-desc{font-size:.9rem;color:var(--text-sub);line-height:2;}
+.dream-platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:16px;}
+.dream-platform{background:var(--sky-pale);padding:5px 13px;border-radius:20px;font-family:var(--gothic);font-size:.68rem;font-weight:600;color:var(--sky-dark);letter-spacing:.02em;}
 
-/* Zero */
-.zero-section{background:var(--accent-pale);padding:44px 20px;text-align:center;}
-.zero-other{font-size:1rem;color:var(--text-light);}
-.zero-other s{font-size:1.2rem;font-weight:700;}
-.zero-arrow{font-size:1.6rem;color:var(--accent);margin:8px 0;}
-.zero-ours{font-size:2.8rem;font-weight:900;color:var(--accent);line-height:1.2;margin-bottom:4px;}
-.zero-ours small{font-size:1rem;font-weight:700;}
-.zero-note{font-size:.88rem;color:var(--text-sub);line-height:2;margin-top:12px;}
+/* ===== Zero ===== */
+.zero-section{background:var(--accent-pale);padding:48px 20px;text-align:center;position:relative;overflow:hidden;}
+.zero-section::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,107,138,.08) 0%,transparent 70%);border-radius:50%;}
+.zero-other{font-size:.95rem;color:var(--text-light);letter-spacing:.02em;}
+.zero-other s{font-family:var(--gothic);font-size:1.2rem;font-weight:700;}
+.zero-arrow{font-size:1.4rem;color:var(--accent);margin:8px 0;letter-spacing:0;}
+.zero-ours{font-family:var(--gothic);font-size:3rem;font-weight:900;color:var(--accent);line-height:1.15;margin-bottom:4px;letter-spacing:-.02em;}
+.zero-ours small{font-size:.95rem;font-weight:700;letter-spacing:.04em;}
+.zero-note{font-size:.88rem;color:var(--text-sub);line-height:2;margin-top:14px;position:relative;z-index:1;}
 .zero-note strong{color:var(--accent);}
 
-/* Features (活動サポート内容) */
+/* ===== Features ===== */
 .feature-list{display:flex;flex-direction:column;}
-.feature-item{padding:32px 0;border-bottom:1px solid var(--border);}
+.feature-item{padding:36px 0;border-bottom:1px solid var(--border);}
 .feature-item:last-child{border-bottom:none;padding-bottom:0;}
-.feature-num-label{font-size:.68rem;font-weight:700;color:var(--sky);margin-bottom:4px;}
-.feature-title{font-size:1.15rem;font-weight:900;margin-bottom:10px;line-height:1.5;}
-.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2;}
-.feature-desc strong{color:var(--text);font-weight:700;background:linear-gradient(transparent 60%,rgba(74,173,232,.18) 60%);}
-.feature-photo{margin-top:16px;aspect-ratio:16/10;border-radius:14px;}
+.feature-num-label{font-family:var(--gothic);font-size:1.8rem;font-weight:900;color:rgba(74,173,232,.15);line-height:1;margin-bottom:6px;letter-spacing:-.02em;}
+.feature-title{font-family:var(--gothic);font-size:1.12rem;font-weight:800;margin-bottom:10px;line-height:1.5;letter-spacing:.01em;}
+.feature-desc{font-size:.9rem;color:var(--text-sub);line-height:2;}
+.feature-desc strong{color:var(--text);font-weight:700;background:linear-gradient(transparent 60%,rgba(74,173,232,.15) 60%);}
+.feature-photo{margin-top:16px;aspect-ratio:16/10;border-radius:12px;}
 
-/* Roadmap */
+/* ===== Roadmap ===== */
 .roadmap-list{display:flex;flex-direction:column;position:relative;}
-.roadmap-list::before{content:'';position:absolute;left:27px;top:28px;bottom:28px;width:3px;background:var(--border);border-radius:2px;}
-.roadmap-item{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start;position:relative;padding:20px 0;}
-.roadmap-badge{width:56px;height:56px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.5rem;font-weight:900;color:#fff;z-index:1;flex-shrink:0;line-height:1.2;}
-.roadmap-badge span{font-size:.85rem;}
-.p1{background:var(--sky)}.p2{background:#51CF66}.p3{background:var(--accent)}.p4{background:linear-gradient(135deg,#D4A017,#F5D76E);color:#333;}
-.roadmap-title{font-size:1.05rem;font-weight:900;margin-bottom:4px;line-height:1.4;}
-.roadmap-desc{font-size:.88rem;color:var(--text-sub);line-height:2;}
+.roadmap-list::before{content:'';position:absolute;left:28px;top:30px;bottom:30px;width:2px;background:var(--border);}
+.roadmap-item{display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:start;position:relative;padding:22px 0;}
+.roadmap-badge{width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--gothic);font-size:.42rem;font-weight:900;color:#fff;z-index:1;flex-shrink:0;line-height:1.1;letter-spacing:.06em;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.roadmap-badge span{font-size:1rem;letter-spacing:-.02em;}
+.p1{background:var(--sky)}.p2{background:#51CF66}.p3{background:var(--accent)}.p4{background:linear-gradient(135deg,#C9991A,#F0D860);color:#3a3000;}
+.roadmap-title{font-family:var(--gothic);font-size:1.02rem;font-weight:800;margin-bottom:4px;line-height:1.45;letter-spacing:.01em;}
+.roadmap-desc{font-size:.86rem;color:var(--text-sub);line-height:2;}
 
-/* Pricing */
-.price-block{margin-bottom:28px;}
-.price-block-label{display:inline-block;background:var(--sky);color:#fff;font-size:.95rem;font-weight:900;padding:6px 22px;border-radius:6px;margin-bottom:14px;}
-.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--border);font-size:1.05rem;}
+/* ===== Pricing ===== */
+.price-block{margin-bottom:32px;background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.03);}
+.price-block-label{display:block;background:var(--sky);color:#fff;font-family:var(--gothic);font-size:1.05rem;font-weight:900;padding:12px 22px;letter-spacing:.04em;}
+.price-row{display:flex;flex-wrap:wrap;align-items:baseline;padding:16px 22px;border-bottom:1px solid var(--border);font-size:1rem;gap:4px 0;position:relative;}
 .price-row:last-child{border-bottom:none;}
-.price-freq{font-weight:700;min-width:60px;}
-.price-amount{font-weight:900;font-size:1.15rem;}
-.price-tax{font-size:.72rem;color:var(--text-light);font-weight:400;margin-left:4px;}
-.price-extra{background:var(--bg-gray);border-radius:12px;padding:20px;margin-top:8px;}
-.price-extra-row{display:flex;justify-content:space-between;font-size:.95rem;padding:6px 0;}
-.price-extra-row:first-child{font-weight:700;}
-.pricing-highlight{background:var(--yellow-pale);border:2px solid var(--yellow);border-radius:14px;padding:20px;margin-top:24px;font-size:.95rem;text-align:center;line-height:2;}
+.price-row.best{background:var(--accent-pale);border-bottom-color:rgba(255,107,138,.15);}
+.price-row-main{display:flex;justify-content:space-between;align-items:baseline;width:100%;}
+.price-freq{font-family:var(--gothic);font-weight:800;min-width:56px;color:var(--text);letter-spacing:.02em;}
+.price-amount{font-family:var(--gothic);font-weight:900;font-size:1.12rem;letter-spacing:-.01em;}
+.price-tax{font-size:.7rem;color:var(--text-light);font-weight:400;margin-left:4px;}
+.price-unit{display:flex;justify-content:flex-end;align-items:center;gap:6px;width:100%;margin-top:2px;}
+.price-unit-text{font-family:var(--gothic);font-size:.72rem;color:var(--text-sub);font-weight:500;}
+.price-unit-num{font-family:var(--gothic);font-size:.82rem;font-weight:800;color:var(--sky-dark);}
+.price-row.best .price-unit-num{color:var(--accent);font-size:.88rem;}
+.price-best-badge{font-family:var(--gothic);font-size:.55rem;font-weight:900;background:var(--accent);color:#fff;padding:2px 8px;border-radius:3px;letter-spacing:.04em;margin-left:auto;position:absolute;top:10px;right:16px;}
+.price-extra{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-top:8px;}
+.price-extra-row{display:flex;justify-content:space-between;font-family:var(--gothic);font-size:.92rem;padding:5px 0;}
+.price-extra-row:first-child{font-weight:800;}
+.pricing-highlight{background:var(--yellow-pale);border:2px solid var(--yellow);border-radius:14px;padding:20px 22px;margin-top:24px;font-size:.92rem;text-align:center;line-height:2;}
 .pricing-highlight strong{color:var(--accent);}
 
-/* Voices */
+/* ===== Voices ===== */
 .voice-list{display:flex;flex-direction:column;gap:24px;}
-.voice-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
-.voice-photo{width:100%;aspect-ratio:4/3;background:#E2EFF7;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--sky-dark);font-weight:700;}
-.voice-body-wrap{padding:24px;}
-.voice-header{font-size:1.1rem;font-weight:900;margin-bottom:10px;line-height:1.5;}
-.voice-body{font-size:.92rem;color:var(--text-sub);line-height:2;margin-bottom:14px;}
-.voice-footer{display:flex;align-items:center;gap:10px;}
-.voice-avatar{width:44px;height:44px;border-radius:50%;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:var(--sky);flex-shrink:0;}
-.voice-name{font-size:.88rem;font-weight:700;}
-.voice-detail{font-size:.72rem;color:var(--text-light);}
-.voice-tags{display:flex;gap:5px;margin-top:3px;}
-.voice-tag{font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--sky);color:#fff;}
+.voice-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03);}
+.voice-photo{width:100%;aspect-ratio:4/3;}
+.voice-body-wrap{padding:24px 22px;}
+.voice-header{font-family:var(--gothic);font-size:1.08rem;font-weight:800;margin-bottom:10px;line-height:1.5;letter-spacing:.01em;}
+.voice-body{font-size:.9rem;color:var(--text-sub);line-height:2;margin-bottom:16px;}
+.voice-footer{display:flex;align-items:center;gap:12px;}
+.voice-avatar{width:44px;height:44px;border-radius:50%;background:var(--sky-pale);border:2px solid var(--sky);display:flex;align-items:center;justify-content:center;font-family:var(--gothic);font-weight:900;font-size:.88rem;color:var(--sky);flex-shrink:0;}
+.voice-name{font-family:var(--gothic);font-size:.85rem;font-weight:700;letter-spacing:.02em;}
+.voice-detail{font-size:.7rem;color:var(--text-light);}
+.voice-tags{display:flex;gap:5px;margin-top:4px;}
+.voice-tag{font-family:var(--gothic);font-size:.58rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--sky);color:#fff;letter-spacing:.02em;}
 .voice-tag.pink{background:var(--accent);}
 
-/* FAQ */
+/* ===== FAQ ===== */
 .faq-list{display:flex;flex-direction:column;gap:8px;}
-.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg);}
-.faq-q{display:flex;align-items:center;gap:10px;padding:16px 18px;cursor:pointer;user-select:none;font-size:.95rem;font-weight:700;}
+.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg);box-shadow:0 1px 4px rgba(0,0,0,.02);}
+.faq-q{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none;font-size:.95rem;font-weight:700;transition:background .15s;}
 .faq-q:hover{background:var(--bg-gray);}
-.faq-q-label{width:28px;height:28px;flex-shrink:0;background:var(--sky);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;}
-.faq-q-text{flex:1;}
-.faq-q-toggle{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--bg-gray);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--text-light);transition:transform .3s,background .3s;}
-.faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--sky-pale);color:var(--sky);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-q-label{width:28px;height:28px;flex-shrink:0;background:var(--sky);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--gothic);font-size:.75rem;font-weight:900;}
+.faq-q-text{flex:1;font-family:var(--gothic);font-weight:700;letter-spacing:.01em;}
+.faq-q-toggle{width:26px;height:26px;flex-shrink:0;border-radius:50%;background:var(--bg-gray);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-light);transition:transform .3s,background .3s,color .3s;}
+.faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--sky);color:#fff;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
 .faq-item.open .faq-a{max-height:400px;}
-.faq-a-inner{padding:0 18px 18px 56px;font-size:.88rem;color:var(--text-sub);line-height:2;}
+.faq-a-inner{padding:0 20px 20px 60px;font-size:.88rem;color:var(--text-sub);line-height:2;}
 
-/* CTA */
-.cta-banner{background:linear-gradient(135deg,var(--sky-pale) 0%,#D4F0FF 50%,var(--accent-pale) 100%);padding:44px 20px;text-align:center;}
-.cta-title{font-size:clamp(1.15rem,4.5vw,1.5rem);font-weight:900;margin-bottom:10px;line-height:1.6;}
-.cta-desc{font-size:.9rem;color:var(--text-sub);margin-bottom:20px;}
+/* ===== CTA ===== */
+.cta-banner{background:linear-gradient(135deg,var(--sky-pale) 0%,#D2EEFF 50%,var(--accent-pale) 100%);padding:48px 20px;text-align:center;}
+.cta-title{font-family:var(--gothic);font-size:clamp(1.15rem,4.5vw,1.5rem);font-weight:900;margin-bottom:10px;line-height:1.6;letter-spacing:.02em;}
+.cta-desc{font-size:.88rem;color:var(--text-sub);margin-bottom:24px;}
 
-/* Form */
-.form-wrapper{max-width:520px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;}
-.form-group{margin-bottom:20px;}
-.form-label{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;margin-bottom:6px;}
-.form-req{font-size:.55rem;font-weight:900;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px;}
-.form-input,.form-select,.form-textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:var(--font);background:var(--bg);transition:border-color .2s;}
-.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--sky);}
-.form-input::placeholder{color:var(--text-light);}
+/* ===== Form ===== */
+.form-wrapper{max-width:520px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;box-shadow:0 2px 16px rgba(0,0,0,.03);}
+.form-group{margin-bottom:22px;}
+.form-label{display:flex;align-items:center;gap:6px;font-family:var(--gothic);font-size:.88rem;font-weight:700;margin-bottom:8px;letter-spacing:.02em;}
+.form-req{font-family:var(--gothic);font-size:.52rem;font-weight:900;background:var(--accent);color:#fff;padding:2px 7px;border-radius:3px;letter-spacing:.04em;}
+.form-input,.form-select,.form-textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:var(--round);background:var(--bg);transition:border-color .2s,box-shadow .2s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(74,173,232,.08);}
+.form-input::placeholder{color:#bbb;}
 .form-textarea{min-height:100px;resize:vertical;}
 .form-radios,.form-checks{display:flex;gap:16px;flex-wrap:wrap;}
-.form-radio,.form-check{display:flex;align-items:center;gap:6px;font-size:.9rem;cursor:pointer;}
+.form-radio,.form-check{display:flex;align-items:center;gap:6px;font-size:.88rem;cursor:pointer;}
 .form-radio input,.form-check input{accent-color:var(--sky);width:18px;height:18px;}
-.form-submit-btn{display:block;width:100%;padding:18px;border:none;border-radius:60px;background:var(--green);color:#fff;font-size:1.1rem;font-weight:900;cursor:pointer;font-family:var(--font);box-shadow:0 4px 20px rgba(6,199,85,.3);transition:all .2s;}
-.form-submit-btn:hover{background:var(--green-dark);transform:translateY(-1px);}
-.form-agree{text-align:center;font-size:.68rem;color:var(--text-light);margin-top:12px;line-height:1.7;}
+.form-submit-btn{display:block;width:100%;padding:18px;border:none;border-radius:60px;background:var(--green);color:#fff;font-family:var(--gothic);font-size:1.05rem;font-weight:900;cursor:pointer;box-shadow:0 4px 20px rgba(6,199,85,.28);transition:all .2s;letter-spacing:.04em;}
+.form-submit-btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 6px 24px rgba(6,199,85,.35);}
+.form-agree{text-align:center;font-size:.65rem;color:var(--text-light);margin-top:14px;line-height:1.7;}
 .form-agree a{color:var(--sky);text-decoration:underline;}
 
-/* Footer */
-.footer{background:var(--sky);color:#fff;padding:36px 0 20px;}
-.footer-name{font-size:1rem;font-weight:900;margin-bottom:6px;}
-.footer-name small{display:block;font-size:.7rem;font-weight:500;opacity:.8;}
-.footer-desc{font-size:.72rem;opacity:.8;line-height:1.9;margin-bottom:20px;}
+/* ===== Footer ===== */
+.footer{background:#1a2a3a;color:#fff;padding:40px 0 20px;}
+.footer-name{font-family:var(--gothic);font-size:.95rem;font-weight:900;margin-bottom:6px;letter-spacing:.03em;}
+.footer-name small{display:block;font-size:.65rem;font-weight:400;opacity:.6;margin-top:2px;letter-spacing:.04em;}
+.footer-desc{font-size:.7rem;opacity:.5;line-height:1.9;margin-bottom:20px;}
 .footer-links-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
-.footer-links-row a{font-size:.72rem;color:rgba(255,255,255,.8);}
-.footer-links-row a:hover{color:#fff;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:12px;font-size:.6rem;opacity:.6;}
+.footer-links-row a{font-size:.68rem;color:rgba(255,255,255,.5);transition:color .2s;}
+.footer-links-row a:hover{color:rgba(255,255,255,.9);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:14px;font-size:.55rem;opacity:.35;}
 
-/* Floating CTA - LINE green + glow pulse */
+/* ===== Floating CTA ===== */
 .floating-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;padding:12px 20px;transform:translateY(100%);transition:transform .3s;}
 .floating-bar.show{transform:translateY(0);}
 .floating-btn{
   display:block;width:100%;max-width:440px;margin:0 auto;
   padding:16px;border-radius:60px;text-align:center;
-  font-size:1.05rem;font-weight:900;color:#fff;
-  background:var(--green);border:none;cursor:pointer;
-  font-family:var(--font);position:relative;overflow:hidden;
-  box-shadow:0 4px 24px rgba(6,199,85,.35);
-  animation:greenPulse 2s ease-in-out infinite;
+  font-family:var(--gothic);font-size:1.02rem;font-weight:900;color:#fff;letter-spacing:.04em;
+  background:var(--green);border:none;cursor:pointer;position:relative;
+  box-shadow:0 4px 20px rgba(6,199,85,.3);
+  animation:gPulse 2s ease-in-out infinite;
   transition:background .2s;
 }
 .floating-btn:hover{background:var(--green-dark);}
-.floating-btn::after{
-  content:'';position:absolute;top:50%;left:50%;
-  width:100%;height:100%;border-radius:60px;
+.floating-btn::before{
+  content:'';position:absolute;inset:-3px;border-radius:60px;
   background:transparent;
-  transform:translate(-50%,-50%);
-  animation:greenRipple 2s ease-in-out infinite;
+  animation:gRipple 2s ease-in-out infinite;
   pointer-events:none;
 }
-@keyframes greenPulse{
-  0%,100%{box-shadow:0 4px 24px rgba(6,199,85,.35)}
-  50%{box-shadow:0 4px 24px rgba(6,199,85,.35),0 0 0 6px rgba(6,199,85,.15)}
+@keyframes gPulse{
+  0%,100%{box-shadow:0 4px 20px rgba(6,199,85,.3)}
+  50%{box-shadow:0 4px 20px rgba(6,199,85,.3),0 0 0 5px rgba(6,199,85,.12)}
 }
-@keyframes greenRipple{
-  0%{box-shadow:0 0 0 0 rgba(6,199,85,.3)}
-  50%{box-shadow:0 0 0 12px rgba(6,199,85,0)}
+@keyframes gRipple{
+  0%{box-shadow:0 0 0 0 rgba(6,199,85,.25)}
+  70%{box-shadow:0 0 0 14px rgba(6,199,85,0)}
   100%{box-shadow:0 0 0 0 rgba(6,199,85,0)}
 }
 
@@ -273,46 +285,31 @@ ul{list-style:none;}
   </div>
 </header>
 
-<!-- Hero -->
 <section class="hero">
-  <div class="hero-img ph" style="aspect-ratio:3/4;">
+  <div class="hero-img ph" style="aspect-ratio:3/4;border-radius:0;">
     <span class="hero-img-ph">📸 メインビジュアル写真</span>
-    <div class="hero-img-inner">
-      <p>歌が好き。歌うことが好き。<br>だから、もっと上を目指したい。<br>それが、ここを選んだ理由。</p>
-    </div>
+    <div class="hero-img-inner"><p>歌が好き。歌うことが好き。<br>だから、もっと上を目指したい。<br>それが、ここを選んだ理由。</p></div>
   </div>
   <div class="hero-body">
     <div class="hero-tagline">初心者からプロ志望まで。</div>
     <h1>オンライン<em>ボイトレ</em> ×<br><em>活動バックアップ</em>スクール</h1>
     <p class="hero-school-name">オンライン特化のプロボイスミュージックスクール</p>
-
     <p class="hero-price-intro">＼ 始めやすい低価格 ／</p>
-    <div class="hero-price-box">
-      <span class="hero-price-label">月々</span>
-      <span class="hero-price-label">¥</span>
-      <span class="hero-price-num">3,500</span>
-      <span class="hero-price-suffix">〜</span>
-    </div>
+    <div class="hero-price-box"><span class="hero-price-label">月々</span><span class="hero-price-label">¥</span><span class="hero-price-num">3,500</span><span class="hero-price-suffix">〜</span></div>
     <p class="hero-price-note">（税込¥3,850〜）</p>
-
     <div class="hero-merits">
       <div class="hero-merit"><span class="hero-merit-icon">✅</span>スマホやパソコンで自宅など全国どこでも受講OK！</div>
       <div class="hero-merit"><span class="hero-merit-icon">✅</span>プロのボイストレーナーとマンツーマンで上達！</div>
       <div class="hero-merit"><span class="hero-merit-icon">✅</span>音楽活動のプロデュース・楽曲制作まで本格サポート！</div>
       <div class="hero-merit"><span class="hero-merit-icon">✅</span>12ヶ月後にオリジナル楽曲の全国リリース・配信可能！</div>
     </div>
-
     <a href="#contact" class="btn-cta">体験レッスンを受けてみる</a>
     <p class="hero-note">※ 60分の無料体験レッスン ／ オンラインで全国対応</p>
   </div>
 </section>
 
-<div class="campaign">
-  <div class="campaign-text">今なら無料体験レッスン申込みで <strong>入会金 ¥0</strong></div>
-  <div class="campaign-date">2026年4月30日受付分まで</div>
-</div>
+<div class="campaign"><div class="campaign-text">今なら無料体験レッスン申込みで <strong>入会金 ¥0</strong></div><div class="campaign-date">2026年4月30日受付分まで</div></div>
 
-<!-- Pain -->
 <section class="section">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">こんな悩み、ありませんか？</span></h2></div>
@@ -327,25 +324,17 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- 受講のしかた -->
 <section class="section section-sky">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">受講のしかた</span></h2></div>
     <p class="howto-text">オンラインレッスンの受講に必要なものは<br><strong>スマホ や タブレット や PC と ネット</strong> のみ</p>
-    <p style="font-size:.72rem;color:var(--text-light);text-align:center;">※イヤホン等の備品は別途ご用意ください。</p>
-    <div class="howto-icons">
-      <div class="howto-icon">📱</div><div class="howto-icon">💻</div><div class="howto-icon">🖥️</div>
-      <div class="howto-plus">＋</div><div class="howto-icon">📶</div>
-    </div>
+    <p style="font-size:.7rem;color:var(--text-light);text-align:center;">※イヤホン等の備品は別途ご用意ください。</p>
+    <div class="howto-icons"><div class="howto-icon">📱</div><div class="howto-icon">💻</div><div class="howto-icon">🖥️</div><div class="howto-plus">＋</div><div class="howto-icon">📶</div></div>
     <p class="howto-text">Zoomを使って<br><strong>URLをクリックするだけでレッスン開始！</strong></p>
-    <div class="howto-box reveal">
-      <div class="howto-box-title">初めてのオンラインレッスンでも安心</div>
-      <div class="howto-box-desc">ネット環境や接続トラブル等々、<br>専門スタッフが<strong style="color:var(--sky);">丁寧にサポート</strong>します。</div>
-    </div>
+    <div class="howto-box reveal"><div class="howto-box-title">初めてのオンラインレッスンでも安心</div><div class="howto-box-desc">ネット環境や接続トラブル等々、<br>専門スタッフが<strong style="color:var(--sky);">丁寧にサポート</strong>します。</div></div>
   </div>
 </section>
 
-<!-- 選ばれる理由 -->
 <section class="section">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">選ばれる理由</span></h2></div>
@@ -360,31 +349,30 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- ボイストレーニング内容 -->
 <section class="section section-gray" id="voicetraining">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">ボイストレーニング内容</span></h2><p class="section-desc">あなたに合わせたマンツーマンのボイトレで、着実にレベルアップ。</p></div>
     <div class="step-list">
       <div class="step-item reveal">
-        <div class="step-badge">STEP <span>01</span></div>
+        <div class="step-head"><div class="step-num">01<div class="step-label">STEP</div></div></div>
         <h3 class="step-title">あなたのやりたいこと・悩みをヒアリング</h3>
         <p class="step-desc">レッスンの前に、声の悩みや気になっていること、レッスンで見てほしいポイントを講師に詳しくお聞かせください。あなたの目標に合わせたレッスンプランを組み立てます。</p>
         <div class="step-photo ph" style="aspect-ratio:16/10;">📸 カウンセリング風景</div>
       </div>
       <div class="step-item reveal">
-        <div class="step-badge">STEP <span>02</span></div>
+        <div class="step-head"><div class="step-num">02<div class="step-label">STEP</div></div></div>
         <h3 class="step-title">実際にあなたの声をチェック</h3>
         <p class="step-desc">普段通りに歌ったり声を出してもらい、講師があなたの声の特長や課題をチェック。具体的な改善方法や、あなたのやりたいことに合わせた今後のレッスンの進め方を一緒に決めていきます。</p>
         <div class="step-photo ph" style="aspect-ratio:16/10;">📸 ボイスチェック</div>
       </div>
       <div class="step-item reveal">
-        <div class="step-badge">STEP <span>03</span></div>
+        <div class="step-head"><div class="step-num">03<div class="step-label">STEP</div></div></div>
         <h3 class="step-title">ウォーミングアップ・基礎トレーニング</h3>
         <p class="step-desc">あなたに合わせた発声練習やトレーニングを実施。正しい声の出し方や呼吸法を、身体で覚えていきます。基礎がしっかり身につくことで、歌の表現力が大きく変わります。</p>
         <div class="step-photo ph" style="aspect-ratio:16/10;">📸 発声トレーニング</div>
       </div>
       <div class="step-item reveal">
-        <div class="step-badge">STEP <span>04</span></div>
+        <div class="step-head"><div class="step-num">04<div class="step-label">STEP</div></div></div>
         <h3 class="step-title">好きな曲で実践的な練習！</h3>
         <p class="step-desc">トレーニングで学んだことを踏まえて、実際に曲を歌っていきます。あなたが自由に選んだ曲でOK。講師からの具体的なアドバイスを参考に、楽しみながら上達していきましょう。</p>
         <div class="step-photo ph" style="aspect-ratio:16/10;">📸 実践レッスン</div>
@@ -393,7 +381,6 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- Dream -->
 <section class="dream">
   <div class="dream-visual">
     <div class="dream-visual-inner">
@@ -406,14 +393,11 @@ ul{list-style:none;}
     <div class="dream-card reveal">
       <h3 class="dream-card-title">専属契約なし。<br>オリジナル楽曲制作プロジェクトのみ。</h3>
       <p class="dream-card-desc">本プログラムで活動の基礎を固め、活動状況や進行条件を満たせば、自己負担なくオリジナル楽曲制作・全国リリースが可能です。</p>
-      <div class="dream-platforms">
-        <span class="dream-platform">Apple Music</span><span class="dream-platform">Spotify</span><span class="dream-platform">Amazon Music</span><span class="dream-platform">LINE MUSIC</span><span class="dream-platform">AWA</span><span class="dream-platform">他 55以上</span>
-      </div>
+      <div class="dream-platforms"><span class="dream-platform">Apple Music</span><span class="dream-platform">Spotify</span><span class="dream-platform">Amazon Music</span><span class="dream-platform">LINE MUSIC</span><span class="dream-platform">AWA</span><span class="dream-platform">他 55以上</span></div>
     </div>
   </div>
 </section>
 
-<!-- Zero -->
 <section class="zero-section">
   <div class="container reveal">
     <div class="zero-other">他社の楽曲制作費 <s>1曲 50万円以上</s></div>
@@ -423,40 +407,18 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- 活動サポート内容 -->
 <section class="section section-gray" id="features">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">活動サポート内容</span></h2></div>
     <div class="feature-list">
-      <div class="feature-item reveal">
-        <div class="feature-num-label">01</div>
-        <h3 class="feature-title">月2回の活動プロデュース＆<br>ボイストレーニング</h3>
-        <p class="feature-desc">プロのボイストレーナーとマンツーマンで歌唱力を高める強化プログラム。個別で<strong>プロデューサーによるプロデュースミーティング</strong>を実施。今「やるべきこと」を明確にするから迷わず活動を伸ばせます。</p>
-        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 レッスン風景</div>
-      </div>
-      <div class="feature-item reveal">
-        <div class="feature-num-label">02</div>
-        <h3 class="feature-title">チームでの活動サポート体制</h3>
-        <p class="feature-desc"><strong>迷いなく活動に打ち込める専用の相談窓口</strong>を設置。一人で悩まずチームと一緒に活動を加速させます。</p>
-        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 サポート体制</div>
-      </div>
-      <div class="feature-item reveal">
-        <div class="feature-num-label">03</div>
-        <h3 class="feature-title">外部案件の交渉・調整は<br>マネージャーがサポート</h3>
-        <p class="feature-desc">企業コラボや番組出演など<strong>交渉・調整は担当スタッフが担当。</strong>あなたは「活動」そのものに全力で向き合える環境です。</p>
-        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 マネージャーサポート</div>
-      </div>
-      <div class="feature-item reveal">
-        <div class="feature-num-label">04</div>
-        <h3 class="feature-title">公式HP・SNSでの掲載・拡散</h3>
-        <p class="feature-desc"><strong>事務所のHPやSNSアカウントでも積極的に紹介・発信。</strong>チームであなたの認知拡大を後押しします。</p>
-        <div class="feature-photo ph" style="aspect-ratio:16/10;">📸 SNS拡散</div>
-      </div>
+      <div class="feature-item reveal"><div class="feature-num-label">01</div><h3 class="feature-title">月2回の活動プロデュース＆<br>ボイストレーニング</h3><p class="feature-desc">プロのボイストレーナーとマンツーマンで歌唱力を高める強化プログラム。個別で<strong>プロデューサーによるプロデュースミーティング</strong>を実施。今「やるべきこと」を明確にするから迷わず活動を伸ばせます。</p><div class="feature-photo ph" style="aspect-ratio:16/10;">📸 レッスン風景</div></div>
+      <div class="feature-item reveal"><div class="feature-num-label">02</div><h3 class="feature-title">チームでの活動サポート体制</h3><p class="feature-desc"><strong>迷いなく活動に打ち込める専用の相談窓口</strong>を設置。一人で悩まずチームと一緒に活動を加速させます。</p><div class="feature-photo ph" style="aspect-ratio:16/10;">📸 サポート体制</div></div>
+      <div class="feature-item reveal"><div class="feature-num-label">03</div><h3 class="feature-title">外部案件の交渉・調整は<br>マネージャーがサポート</h3><p class="feature-desc">企業コラボや番組出演など<strong>交渉・調整は担当スタッフが担当。</strong>あなたは「活動」そのものに全力で向き合える環境です。</p><div class="feature-photo ph" style="aspect-ratio:16/10;">📸 マネージャーサポート</div></div>
+      <div class="feature-item reveal"><div class="feature-num-label">04</div><h3 class="feature-title">公式HP・SNSでの掲載・拡散</h3><p class="feature-desc"><strong>事務所のHPやSNSアカウントでも積極的に紹介・発信。</strong>チームであなたの認知拡大を後押しします。</p><div class="feature-photo ph" style="aspect-ratio:16/10;">📸 SNS拡散</div></div>
     </div>
   </div>
 </section>
 
-<!-- Roadmap -->
 <section class="section" id="roadmap">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">成長のロードマップ</span></h2><p class="section-desc">頑張った分はしっかり「成果」と「活動収益」として還元されます。</p></div>
@@ -469,58 +431,63 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- Pricing -->
 <section class="section section-gray" id="pricing">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">料金（月謝）</span></h2><p class="section-desc">年会費・教材費は無料！</p></div>
     <div class="price-block reveal">
       <div class="price-block-label">30分レッスン</div>
-      <div class="price-row"><span class="price-freq">月1回</span><span class="price-amount">¥3,250-<span class="price-tax">（税込¥3,575）</span></span></div>
-      <div class="price-row"><span class="price-freq">月2回</span><span class="price-amount">¥6,080-<span class="price-tax">（税込¥6,688）</span></span></div>
-      <div class="price-row"><span class="price-freq">月3回</span><span class="price-amount">¥8,250-<span class="price-tax">（税込¥9,075）</span></span></div>
-      <div class="price-row"><span class="price-freq">月4回</span><span class="price-amount">¥10,800-<span class="price-tax">（税込¥11,880）</span></span></div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月1回</span><span class="price-amount">¥3,250-<span class="price-tax">（税込¥3,575）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,575</span></div>
+      </div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月2回</span><span class="price-amount">¥6,080-<span class="price-tax">（税込¥6,688）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,344</span></div>
+      </div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月3回</span><span class="price-amount">¥8,250-<span class="price-tax">（税込¥9,075）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,025</span></div>
+      </div>
+      <div class="price-row best">
+        <span class="price-best-badge">一番お得</span>
+        <div class="price-row-main"><span class="price-freq">月4回</span><span class="price-amount">¥10,800-<span class="price-tax">（税込¥11,880）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥2,970</span></div>
+      </div>
     </div>
     <div class="price-block reveal">
       <div class="price-block-label">60分レッスン</div>
-      <div class="price-row"><span class="price-freq">月1回</span><span class="price-amount">¥5,500-<span class="price-tax">（税込¥6,050）</span></span></div>
-      <div class="price-row"><span class="price-freq">月2回</span><span class="price-amount">¥11,000-<span class="price-tax">（税込¥12,100）</span></span></div>
-      <div class="price-row"><span class="price-freq">月3回</span><span class="price-amount">¥16,500-<span class="price-tax">（税込¥18,150）</span></span></div>
-      <div class="price-row"><span class="price-freq">月4回</span><span class="price-amount">¥22,000-<span class="price-tax">（税込¥24,200）</span></span></div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月1回</span><span class="price-amount">¥5,500-<span class="price-tax">（税込¥6,050）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,025</span></div>
+      </div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月2回</span><span class="price-amount">¥11,000-<span class="price-tax">（税込¥12,100）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,025</span></div>
+      </div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月3回</span><span class="price-amount">¥16,500-<span class="price-tax">（税込¥18,150）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,025</span></div>
+      </div>
+      <div class="price-row">
+        <div class="price-row-main"><span class="price-freq">月4回</span><span class="price-amount">¥22,000-<span class="price-tax">（税込¥24,200）</span></span></div>
+        <div class="price-unit"><span class="price-unit-text">30分あたり</span><span class="price-unit-num">税込¥3,025</span></div>
+      </div>
     </div>
-    <div class="price-extra reveal">
-      <div class="price-extra-row"><span>入会金</span><span>¥3,000</span></div>
-      <div class="price-extra-row" style="font-size:.78rem;color:var(--text-sub);">※ 体験レッスン当日入会の場合は ¥2,000</div>
-    </div>
+    <div class="price-extra reveal"><div class="price-extra-row"><span>入会金</span><span>¥3,000</span></div><div class="price-extra-row" style="font-size:.78rem;color:var(--text-sub);">※ 体験レッスン当日入会の場合は ¥2,000</div></div>
     <div class="pricing-highlight reveal">この月額費用と初期事務手数料以外に、<strong>必須となる追加費用は一切ありません。</strong></div>
   </div>
 </section>
 
-<!-- Voices -->
 <section class="section" id="voices">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">参加者の声</span></h2></div>
     <div class="voice-list">
-      <div class="voice-card reveal">
-        <div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div>
-        <div class="voice-body-wrap">
-          <h4 class="voice-header">プロデューサーと方向性を決められるのが心強いです。</h4>
-          <p class="voice-body">一人で活動していた時は何から手をつけていいか分からなかったのですが、毎月のプロデュースミーティングで「今やるべきこと」が明確になり、迷わず活動に集中できています。</p>
-          <div class="voice-footer"><div class="voice-avatar">A</div><div><div class="voice-name">A.Kさん</div><div class="voice-detail">20代・歌い手活動歴1年</div><div class="voice-tags"><span class="voice-tag">ボイトレ</span><span class="voice-tag pink">SNSコーチング</span></div></div></div>
-        </div>
-      </div>
-      <div class="voice-card reveal">
-        <div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div>
-        <div class="voice-body-wrap">
-          <h4 class="voice-header">オリジナル楽曲のリリースが現実になりました。</h4>
-          <p class="voice-body">他のスクールでは楽曲制作に数十万円かかると聞いて諦めかけていましたが、実質無料でリリースまでサポートしてもらえると知って即決しました。</p>
-          <div class="voice-footer"><div class="voice-avatar">M</div><div><div class="voice-name">M.Tさん</div><div class="voice-detail">20代・活動歴2年</div><div class="voice-tags"><span class="voice-tag">楽曲制作</span><span class="voice-tag pink">全国リリース</span></div></div></div>
-        </div>
-      </div>
+      <div class="voice-card reveal"><div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div><div class="voice-body-wrap"><h4 class="voice-header">プロデューサーと方向性を決められるのが心強いです。</h4><p class="voice-body">一人で活動していた時は何から手をつけていいか分からなかったのですが、毎月のプロデュースミーティングで「今やるべきこと」が明確になり、迷わず活動に集中できています。</p><div class="voice-footer"><div class="voice-avatar">A</div><div><div class="voice-name">A.Kさん</div><div class="voice-detail">20代・歌い手活動歴1年</div><div class="voice-tags"><span class="voice-tag">ボイトレ</span><span class="voice-tag pink">SNSコーチング</span></div></div></div></div></div>
+      <div class="voice-card reveal"><div class="voice-photo ph" style="aspect-ratio:4/3;">📸 インタビュー写真</div><div class="voice-body-wrap"><h4 class="voice-header">オリジナル楽曲のリリースが現実になりました。</h4><p class="voice-body">他のスクールでは楽曲制作に数十万円かかると聞いて諦めかけていましたが、実質無料でリリースまでサポートしてもらえると知って即決しました。</p><div class="voice-footer"><div class="voice-avatar">M</div><div><div class="voice-name">M.Tさん</div><div class="voice-detail">20代・活動歴2年</div><div class="voice-tags"><span class="voice-tag">楽曲制作</span><span class="voice-tag pink">全国リリース</span></div></div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="section section-gray" id="faq">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">よくあるご質問</span></h2></div>
@@ -533,16 +500,8 @@ ul{list-style:none;}
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <div class="container">
-    <h2 class="cta-title">あなたの「歌いたい」を、<br>デビューにつなげよう。</h2>
-    <p class="cta-desc">まずは60分の無料体験レッスンから。</p>
-    <a href="#contact" class="btn-cta" style="max-width:400px;background:var(--green);box-shadow:0 4px 20px rgba(6,199,85,.3);">体験レッスンを受けてみる</a>
-  </div>
-</section>
+<section class="cta-banner"><div class="container"><h2 class="cta-title">あなたの「歌いたい」を、<br>デビューにつなげよう。</h2><p class="cta-desc">まずは60分の無料体験レッスンから。</p><a href="#contact" class="btn-cta" style="max-width:400px;background:var(--green);box-shadow:0 4px 20px rgba(6,199,85,.28);">体験レッスンを受けてみる</a></div></section>
 
-<!-- Form -->
 <section class="section" id="contact">
   <div class="container">
     <div class="section-head"><h2 class="section-title"><span class="hl">体験レッスン予約</span></h2><p class="section-desc">無料体験レッスン随時受付中です♪</p></div>
@@ -560,18 +519,9 @@ ul{list-style:none;}
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-name">プロボイスミュージックスクール<small>オンラインボイストレーニング × 活動バックアップスクール</small></div>
-    <p class="footer-desc">初心者からプロ志望まで。スマホ・タブレット・PCとネット環境があれば全国どこからでも受講可能。SNS活動のプロデュースから楽曲制作・全国リリースまで一貫サポート。</p>
-    <div class="footer-links-row"><a href="#features">活動サポート</a><a href="#roadmap">ロードマップ</a><a href="#pricing">料金</a><a href="#voices">参加者の声</a><a href="#faq">FAQ</a><a href="#contact">体験レッスン</a><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a></div>
-    <div class="footer-bottom">© 2026 プロボイスミュージックスクール All Rights Reserved.</div>
-  </div>
-</footer>
+<footer class="footer"><div class="container"><div class="footer-name">プロボイスミュージックスクール<small>オンラインボイストレーニング × 活動バックアップスクール</small></div><p class="footer-desc">初心者からプロ志望まで。スマホ・タブレット・PCとネット環境があれば全国どこからでも受講可能。SNS活動のプロデュースから楽曲制作・全国リリースまで一貫サポート。</p><div class="footer-links-row"><a href="#features">活動サポート</a><a href="#roadmap">ロードマップ</a><a href="#pricing">料金</a><a href="#voices">参加者の声</a><a href="#faq">FAQ</a><a href="#contact">体験レッスン</a><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a></div><div class="footer-bottom">© 2026 プロボイスミュージックスクール All Rights Reserved.</div></div></footer>
 
-<div class="floating-bar" id="floatingBar">
-  <a href="#contact" class="floating-btn">体験レッスンを受けてみる</a>
-</div>
+<div class="floating-bar" id="floatingBar"><a href="#contact" class="floating-btn">体験レッスンを受けてみる</a></div>
 
 <script>
 const h=document.getElementById('header'),f=document.getElementById('floatingBar');
