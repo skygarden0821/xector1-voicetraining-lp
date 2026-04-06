@@ -338,27 +338,22 @@ ul{list-style:none;}
 .pr-best{font-family:var(--g);font-size:.65rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:5px 14px;border-radius:20px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 3px 12px rgba(255,107,138,.4);letter-spacing:.04em;}
 
 /* ===== 一番お得 — Premium Badge & Row ===== */
-@keyframes badgeShim{0%{background-position:200% center}100%{background-position:-200% center}}
-@keyframes badgePulse{0%,100%{box-shadow:0 4px 20px rgba(255,107,138,.45),0 0 0 0 rgba(255,107,138,.35)}60%{box-shadow:0 6px 32px rgba(255,107,138,.6),0 0 0 12px rgba(255,107,138,0)}}
-
 .pr-best{
   font-family:var(--g);
-  font-size:.85rem;
+  font-size:.8rem;
   font-weight:900;
-  background:linear-gradient(90deg,#ff3a6e,#ff8fab,#e5004c,#ff6b8a,#ff3a6e);
-  background-size:300% auto;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
   color:#fff;
-  padding:8px 22px;
+  padding:6px 18px;
   border-radius:30px;
   position:absolute;
-  top:-16px;
+  top:-14px;
   left:50%;
   transform:translateX(-50%);
   white-space:nowrap;
-  letter-spacing:.06em;
-  animation:badgeShim 2.5s linear infinite, badgePulse 2s ease-in-out infinite;
-  border:1.5px solid rgba(255,255,255,.35);
-  text-shadow:0 1px 4px rgba(0,0,0,.2);
+  letter-spacing:.05em;
+  box-shadow:0 3px 12px rgba(255,107,138,.35);
+  border:1px solid rgba(255,255,255,.25);
 }
 
 .pr-row.best{
