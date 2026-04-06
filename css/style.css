@@ -297,3 +297,42 @@ ul{list-style:none;}
 .rev{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
 .rev.v{opacity:1;transform:translateY(0);}
 @media(min-width:768px){.c{max-width:720px}.hero-img{aspect-ratio:16/9}}
+
+/* ===== 活動サポート — Premium Redesign ===== */
+.sec-pro{background:linear-gradient(160deg,#0d1520 0%,#1B2838 50%,#0d1a28 100%);position:relative;overflow:hidden;}
+.sec-pro::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(74,173,232,.06) 0%,transparent 70%);pointer-events:none;}
+.sec-pro::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,107,138,.04) 0%,transparent 70%);pointer-events:none;}
+.ft-grid{display:flex;flex-direction:column;gap:0;}
+.ft-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px 26px;margin-bottom:16px;position:relative;overflow:hidden;transition:border-color .3s;}
+.ft-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),rgba(74,173,232,0));border-radius:20px 20px 0 0;}
+.ft-card:hover{border-color:rgba(74,173,232,.25);}
+.ft-card.accent-card::before{background:linear-gradient(90deg,var(--yellow),rgba(255,213,59,0));}
+.ft-card.accent-card:hover{border-color:rgba(255,213,59,.25);}
+.ft-card.pink-card::before{background:linear-gradient(90deg,var(--accent),rgba(255,107,138,0));}
+.ft-card.pink-card:hover{border-color:rgba(255,107,138,.25);}
+.ft-card.green-card::before{background:linear-gradient(90deg,var(--green),rgba(6,199,85,0));}
+.ft-card.green-card:hover{border-color:rgba(6,199,85,.25);}
+.ft-num{font-family:var(--g);font-size:.55rem;font-weight:900;color:var(--sky);letter-spacing:.25em;line-height:1;margin-bottom:10px;opacity:.8;}
+.ft-card.accent-card .ft-num{color:var(--yellow);}
+.ft-card.pink-card .ft-num{color:var(--accent);}
+.ft-card.green-card .ft-num{color:var(--green);}
+.ft-t{font-family:var(--g);font-size:1.15rem;font-weight:900;margin-bottom:12px;line-height:1.5;color:#fff;}
+.ft-d{font-size:.88rem;color:rgba(255,255,255,.6);line-height:2;}
+.ft-d strong{color:rgba(255,255,255,.9);font-weight:700;}
+.ft-platform-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.ft-platform-tags span{font-family:var(--g);font-size:.62rem;font-weight:700;background:rgba(74,173,232,.1);border:1px solid rgba(74,173,232,.25);color:var(--sky);padding:4px 10px;border-radius:16px;}
+.ft-closing{margin-top:8px;background:linear-gradient(135deg,rgba(74,173,232,.07),rgba(255,213,59,.04));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px 24px;text-align:center;position:relative;overflow:hidden;}
+.ft-closing-main{font-family:var(--g);font-size:1.15rem;font-weight:900;color:#fff;line-height:2;margin-bottom:10px;}
+.ft-closing-main em{font-style:normal;color:var(--sky);}
+.ft-closing-sub{font-size:.88rem;color:rgba(255,255,255,.5);}
+
+/* ===== 料金表 Redesign ===== */
+.pr-block-wrap{display:flex;flex-direction:column;gap:24px;margin-bottom:8px;}
+.pr-block{margin-bottom:0;background:var(--bg);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.04);}
+.pr-label{display:block;background:linear-gradient(135deg,var(--sky),var(--sky-dark));color:#fff;font-family:var(--g);font-size:1rem;font-weight:900;padding:14px 22px;letter-spacing:.04em;}
+.pr-row.best{background:linear-gradient(135deg,#fff8f9,#fff0f3);border:none;padding:22px 22px;position:relative;margin:10px;border-radius:14px;box-shadow:0 4px 20px rgba(255,107,138,.12);}
+.pr-row.best::before{content:'';position:absolute;inset:0;border-radius:14px;border:2.5px solid var(--accent);pointer-events:none;}
+.pr-row.best .pr-freq{font-size:1.1rem;color:var(--accent);font-weight:900;}
+.pr-row.best .pr-amt{font-size:1.4rem;color:var(--accent);}
+.pr-row.best .pr-unit b{color:var(--accent);font-size:1rem;}
+.pr-best{font-family:var(--g);font-size:.65rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:5px 14px;border-radius:20px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 3px 12px rgba(255,107,138,.4);letter-spacing:.04em;}
