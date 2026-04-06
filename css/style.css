@@ -416,3 +416,18 @@ ul{list-style:none;}
   animation:btnSheen 2.8s ease-in-out infinite;
   pointer-events:none;
 }
+
+/* 一番お得バッジ — 色統一・グラデなし */
+.pr-best{
+  background:var(--accent) !important;
+  box-shadow:0 3px 10px rgba(255,107,138,.3) !important;
+}
+
+/* おトク額列 +4px */
+.cmp .ts{font-size:calc(.7rem + 4px) !important;}
+/* プロボイス価格列 +4px */
+.cmp .to{font-size:calc(.9rem + 4px) !important;}
+.cmp tr.best-r .to{font-size:calc(.95rem + 4px) !important;}
+
+/* 入会金 無料キャンペーン中 大きく */
+.pr-free-v span{font-size:.92rem !important;}
