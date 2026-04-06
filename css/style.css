@@ -336,3 +336,88 @@ ul{list-style:none;}
 .pr-row.best .pr-amt{font-size:1.4rem;color:var(--accent);}
 .pr-row.best .pr-unit b{color:var(--accent);font-size:1rem;}
 .pr-best{font-family:var(--g);font-size:.65rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:5px 14px;border-radius:20px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 3px 12px rgba(255,107,138,.4);letter-spacing:.04em;}
+
+/* ===== 一番お得 — Premium Badge & Row ===== */
+@keyframes badgeShim{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes badgePulse{0%,100%{box-shadow:0 4px 20px rgba(255,107,138,.45),0 0 0 0 rgba(255,107,138,.35)}60%{box-shadow:0 6px 32px rgba(255,107,138,.6),0 0 0 12px rgba(255,107,138,0)}}
+
+.pr-best{
+  font-family:var(--g);
+  font-size:.85rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#ff3a6e,#ff8fab,#e5004c,#ff6b8a,#ff3a6e);
+  background-size:300% auto;
+  color:#fff;
+  padding:8px 22px;
+  border-radius:30px;
+  position:absolute;
+  top:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  letter-spacing:.06em;
+  animation:badgeShim 2.5s linear infinite, badgePulse 2s ease-in-out infinite;
+  border:1.5px solid rgba(255,255,255,.35);
+  text-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+
+.pr-row.best{
+  background:linear-gradient(135deg,#fff5f7,#ffe8ee,#fff0f3);
+  border:none;
+  padding:28px 22px 22px;
+  position:relative;
+  margin:14px 10px 10px;
+  border-radius:16px;
+  box-shadow:0 8px 32px rgba(255,107,138,.18),0 2px 8px rgba(255,107,138,.08);
+}
+.pr-row.best::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  border:2.5px solid var(--accent);
+  pointer-events:none;
+}
+.pr-row.best::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 50%);
+  pointer-events:none;
+}
+.pr-row.best .pr-freq{font-size:1.15rem;color:var(--accent);font-weight:900;}
+.pr-row.best .pr-amt{font-size:1.55rem;color:var(--accent);font-weight:900;}
+.pr-row.best .pr-unit b{color:var(--accent);font-size:1.05rem;font-weight:900;}
+
+/* ===== CTAボタン 艶エフェクト ===== */
+@keyframes btnSheen{0%{left:-100%}100%{left:200%}}
+@keyframes ctaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes btnGlow{0%,100%{box-shadow:0 4px 20px rgba(6,199,85,.4),0 0 0 0 rgba(6,199,85,.4)}60%{box-shadow:0 8px 36px rgba(6,199,85,.55),0 0 0 18px rgba(6,199,85,0)}}
+
+.btn{position:relative;overflow:hidden;}
+.btn::after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;
+  left:-100%;
+  width:55%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);
+  animation:btnSheen 2.8s ease-in-out infinite;
+  pointer-events:none;
+}
+.btn-float{animation:ctaFloat 2.5s ease-in-out infinite, btnGlow 2s ease-in-out infinite;}
+
+.fl-btn{position:relative;overflow:hidden;}
+.fl-btn::after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;
+  left:-100%;
+  width:55%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);
+  animation:btnSheen 2.8s ease-in-out infinite;
+  pointer-events:none;
+}
