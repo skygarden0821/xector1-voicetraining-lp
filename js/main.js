@@ -58,24 +58,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     }
   });
 
-  /* ▼ 修正ポイント①
-     spOv.addEventListener('click', closeNav) を廃止。
-     オーバーレイがnavの上に乗るとリンクのタップを横取りするため、
-     document レベルで「nav・hbBtn の外側クリック = 閉じる」に変更。
-  */
+  /*
+   * ▼ 修正ポイント
+   * 旧: spOv.addEventListener('click', closeNav)
+   *   → オーバーレイがCSSのz-indexでspNavの上に重なっていたため
+   *     メニューリンクへのタップをオーバーレイが横取りし
+   *     closeNavだけ走ってスクロール遷移されなかった。
+   *
+   * 新: documentレベルで「nav・hbBtn 外のクリック = 閉じる」に変更。
+   */
   document.addEventListener('click',function(e){
     if(!spNav.classList.contains('open')) return;
     if(spNav.contains(e.target)||hbBtn.contains(e.target)) return;
     closeNav();
   });
 
-  /* ▼ 修正ポイント②
-     nav内のリンクは stopPropagation() でdocumentへの伝播を止め、
-     自分自身のハンドラーで closeNav → setTimeout → scrollTo を実行。
-  */
   spNav.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click',function(e){
-      e.stopPropagation(); // documentのcloseNavを止める
+      e.stopPropagation(); // documentのcloseNavハンドラを止める
       var href=this.getAttribute('href');
       if(href && href.charAt(0)==='#'){
         e.preventDefault();
@@ -112,38 +112,4 @@ function tick(){
 tick();
 setInterval(tick,1000);
 
-/* ===== スクロールポップアップ ===== */
-(function(){
-  /* HTMLのID名が違う場合は下記2行を合わせて変更 */
-  var popup  = document.getElementById('scrollPopup');
-  var popupOv= document.getElementById('popupOverlay');
-  var closeBtn=document.getElementById('popupClose');
-  if(!popup) return;
-
-  /* セッション中1回だけ表示 */
-  if(sessionStorage.getItem('popupShown')) return;
-
-  var shown=false;
-  function showPopup(){
-    if(shown) return;
-    shown=true;
-    popup.classList.add('show');
-    if(popupOv) popupOv.classList.add('show');
-    sessionStorage.setItem('popupShown','1');
-  }
-  function hidePopup(){
-    popup.classList.remove('show');
-    if(popupOv) popupOv.classList.remove('show');
-  }
-
-  /* スクロール800px超で表示 */
-  window.addEventListener('scroll',function(){
-    if(scrollY>800) showPopup();
-  },{passive:true});
-
-  /* 閉じるボタン */
-  if(closeBtn) closeBtn.addEventListener('click', hidePopup);
-
-  /* オーバーレイタップでも閉じる */
-  if(popupOv) popupOv.addEventListener('click', hidePopup);
-})();
+/* ポップアップ（campPopup）はindex.htmlのinlineスクリプトで制御済み */
