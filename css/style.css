@@ -296,7 +296,7 @@ ul{list-style:none;}
 
 .rev{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
 .rev.v{opacity:1;transform:translateY(0);}
-@media(min-width:768px){.c{max-width:720px}.hero-img{aspect-ratio:16/9}}
+@media(min-width:768px){.c{max-width:720px}.hero-img{aspect-ratio:16/9}.hb-btn{display:none !important}.sp-nav{display:none !important}.sp-nav-overlay{display:none !important}}
 
 /* ===== 活動サポート — Premium Redesign ===== */
 .sec-pro{background:linear-gradient(160deg,#0d1520 0%,#1B2838 50%,#0d1a28 100%);position:relative;overflow:hidden;}
@@ -462,8 +462,7 @@ ul{list-style:none;}
 @media(min-width:640px){
   .pc-nav{display:flex;}
   .hb-btn{display:none;}
-  .sp-nav{display:none;}
-  .sp-nav-overlay{display:none !important;}
+  
 }
 
 /* 完全0円 エフェクト — .hl は触らず .zero-v に付与 */
