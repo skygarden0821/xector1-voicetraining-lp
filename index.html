@@ -285,58 +285,6 @@
 })();
 </script>
 
-
-
-
-<script>
-function closeNav(){
-  var btn=document.getElementById('hbBtn');
-  var nav=document.getElementById('spNav');
-  var ov=document.getElementById('spNavOverlay');
-  if(btn) btn.classList.remove('open');
-  if(nav) nav.classList.remove('open');
-  if(ov) ov.classList.remove('open');
-  document.body.style.overflow='';
-}
-(function(){
-  var hbBtn=document.getElementById('hbBtn');
-  var spNav=document.getElementById('spNav');
-  var spOv=document.getElementById('spNavOverlay');
-  if(!hbBtn||!spNav||!spOv) return;
-
-  hbBtn.addEventListener('click',function(){
-    var isOpen=spNav.classList.contains('open');
-    if(isOpen){ closeNav(); }
-    else {
-      spNav.classList.add('open');
-      spOv.classList.add('open');
-      hbBtn.classList.add('open');
-      document.body.style.overflow='hidden';
-    }
-  });
-
-  spOv.addEventListener('click', closeNav);
-
-  spNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(e){
-      var href=this.getAttribute('href');
-      if(href && href.charAt(0)==='#'){
-        e.preventDefault();
-        e.stopPropagation();
-        closeNav();
-        setTimeout(function(){
-          var target=document.getElementById(href.slice(1));
-          if(target){
-            window.scrollTo({top:target.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
-          }
-        },50);
-      } else {
-        closeNav();
-      }
-    });
-  });
-})();
-</script>
 <script src="js/main.js"></script>
 </body>
 </html>
