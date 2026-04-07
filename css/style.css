@@ -395,45 +395,46 @@ ul{list-style:none;}
 .pr-row.best .pr-unit{color:#666 !important;}
 .pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem !important;font-weight:900 !important;}
 
-/* ===== 料金表 一番お得 — 完全クリーン定義 ===== */
+\/* ===== 料金表 一番お得 — ゴールドお得デザイン ===== *\/
 .pr-row.best{
-  background:#ffecef !important;
+  background:linear-gradient(135deg,#fffbea,#fff8d6) !important;
   border:none !important;
   padding:28px 22px 22px !important;
   position:relative !important;
   margin:14px 10px 10px !important;
   border-radius:16px !important;
-  box-shadow:0 4px 16px rgba(192,0,58,.1) !important;
+  box-shadow:0 4px 20px rgba(200,150,0,.15) !important;
 }
 .pr-row.best::before{
   content:'' !important;
   position:absolute !important;
   inset:0 !important;
   border-radius:16px !important;
-  border:2.5px solid #c0003a !important;
+  border:2.5px solid #d4a017 !important;
   pointer-events:none !important;
   background:none !important;
 }
 .pr-row.best::after{display:none !important;}
 .pr-row.best .pr-best{
-  background:#c0003a !important;
-  font-size:.8rem !important;
+  background:linear-gradient(135deg,#d4a017,#f0c040) !important;
+  font-size:.85rem !important;
   font-weight:900 !important;
-  padding:6px 18px !important;
+  padding:7px 20px !important;
   border-radius:30px !important;
   position:absolute !important;
-  top:-14px !important;
+  top:-15px !important;
   left:50% !important;
   transform:translateX(-50%) !important;
   white-space:nowrap !important;
   letter-spacing:.05em !important;
-  box-shadow:0 3px 10px rgba(192,0,58,.3) !important;
+  box-shadow:0 3px 12px rgba(200,150,0,.35) !important;
   color:#fff !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.2) !important;
 }
-.pr-row.best .pr-freq{font-size:1.15rem !important;color:#c0003a !important;font-weight:900 !important;}
-.pr-row.best .pr-amt{font-size:1.55rem !important;color:#c0003a !important;font-weight:900 !important;}
-.pr-row.best .pr-unit{color:#666 !important;}
-.pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem !important;font-weight:900 !important;}
+.pr-row.best .pr-freq{font-size:1.15rem !important;color:#7a5800 !important;font-weight:900 !important;}
+.pr-row.best .pr-amt{font-size:1.55rem !important;color:#7a5800 !important;font-weight:900 !important;}
+.pr-row.best .pr-unit{color:#a07800 !important;}
+.pr-row.best .pr-unit b{color:#7a5800 !important;font-size:1.05rem !important;font-weight:900 !important;}
 
 /* ===== PC Nav ===== */
 .pc-nav{display:none;align-items:center;gap:18px;}
@@ -450,16 +451,16 @@ ul{list-style:none;}
 .hb-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ===== SP Nav Drawer ===== */
-.sp-nav{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#fff;z-index:200;padding:80px 0 40px;display:flex;flex-direction:column;box-shadow:-4px 0 20px rgba(0,0,0,.08);transition:right .3s ease;}
+.sp-nav{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#fff;z-index:300;padding:80px 0 40px;display:flex;flex-direction:column;box-shadow:-4px 0 20px rgba(0,0,0,.08);transition:right .3s ease;}
 .sp-nav.open{right:0;}
 .sp-nav-item{padding:16px 28px;font-family:var(--g);font-size:.95rem;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);transition:background .2s;}
 .sp-nav-item:hover{background:var(--bg-gray);}
 .sp-nav-cta{margin:24px 20px 0;padding:16px;background:var(--green);color:#fff;font-family:var(--g);font-size:.9rem;font-weight:900;text-align:center;border-radius:50px;box-shadow:0 4px 16px rgba(6,199,85,.3);}
-.sp-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:199;}
+.sp-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:298;}
 .sp-nav-overlay.open{display:block;}
 
 @media(min-width:640px){
   .pc-nav{display:flex;}
   .hb-btn{display:none;}
-  .sp-nav,.sp-nav-overlay{display:none !important;}
+  .sp-nav,
 }
