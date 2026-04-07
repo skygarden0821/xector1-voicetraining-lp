@@ -466,15 +466,10 @@ ul{list-style:none;}
   .sp-nav-overlay{display:none !important;}
 }
 
-/* 完全0円 エフェクト */
-@keyframes zeroShim{0%{background-position:200% center}100%{background-position:-200% center}}
-@keyframes zeroPulse{0%,100%{text-shadow:0 0 0 rgba(255,107,138,0)}50%{text-shadow:0 0 20px rgba(255,107,138,.5),0 0 40px rgba(255,107,138,.2)}}
-.zero-v .hl{
-  background:linear-gradient(90deg,#ff3a6e,#ff8fab,var(--accent),#ff8fab,#ff3a6e) !important;
-  background-size:300% auto !important;
-  -webkit-background-clip:text !important;
-  -webkit-text-fill-color:transparent !important;
-  background-clip:text !important;
-  animation:zeroShim 3s linear infinite, zeroPulse 2s ease-in-out infinite !important;
-  padding:0 4px !important;
+/* 完全0円 エフェクト — .hl は触らず .zero-v に付与 */
+@keyframes zeroPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes zeroGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(255,107,138,0))}50%{filter:drop-shadow(0 0 12px rgba(255,107,138,.5))}}
+.zero-v{
+  animation:zeroPulse 2.5s ease-in-out infinite, zeroGlow 2.5s ease-in-out infinite;
+  display:inline-block;
 }
