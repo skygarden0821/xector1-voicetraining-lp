@@ -337,54 +337,6 @@ ul{list-style:none;}
 .pr-row.best .pr-unit b{color:var(--accent);font-size:1rem;}
 .pr-best{font-family:var(--g);font-size:.65rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:5px 14px;border-radius:20px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 3px 12px rgba(255,107,138,.4);letter-spacing:.04em;}
 
-/* ===== 一番お得 — Premium Badge & Row ===== */
-.pr-best{
-  font-family:var(--g);
-  font-size:.8rem;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-  color:#fff;
-  padding:6px 18px;
-  border-radius:30px;
-  position:absolute;
-  top:-14px;
-  left:50%;
-  transform:translateX(-50%);
-  white-space:nowrap;
-  letter-spacing:.05em;
-  box-shadow:0 3px 12px rgba(255,107,138,.35);
-  border:1px solid rgba(255,255,255,.25);
-}
-
-.pr-row.best{
-  background:linear-gradient(135deg,#fff5f7,#ffe8ee,#fff0f3);
-  border:none;
-  padding:28px 22px 22px;
-  position:relative;
-  margin:14px 10px 10px;
-  border-radius:16px;
-  box-shadow:0 8px 32px rgba(255,107,138,.18),0 2px 8px rgba(255,107,138,.08);
-}
-.pr-row.best::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:16px;
-  border:2.5px solid var(--accent);
-  pointer-events:none;
-}
-.pr-row.best::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:16px;
-  background:linear-gradient(135deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 50%);
-  pointer-events:none;
-}
-.pr-row.best .pr-freq{font-size:1.15rem;color:var(--accent);font-weight:900;}
-.pr-row.best .pr-amt{font-size:1.55rem;color:var(--accent);font-weight:900;}
-.pr-row.best .pr-unit b{color:var(--accent);font-size:1.05rem;font-weight:900;}
-
 /* ===== CTAボタン 艶エフェクト ===== */
 @keyframes btnSheen{0%{left:-100%}100%{left:200%}}
 @keyframes ctaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -417,12 +369,6 @@ ul{list-style:none;}
   pointer-events:none;
 }
 
-/* 一番お得バッジ — 色統一・グラデなし */
-.pr-best{
-  background:var(--accent) !important;
-  box-shadow:0 3px 10px rgba(255,107,138,.3) !important;
-}
-
 /* おトク額列 +4px */
 .cmp .ts{font-size:calc(.7rem + 4px) !important;}
 /* プロボイス価格列 +4px */
@@ -431,3 +377,89 @@ ul{list-style:none;}
 
 /* 入会金 無料キャンペーン中 大きく */
 .pr-free-v span{font-size:.92rem !important;}
+
+/* 一番お得 row — 単色・高コントラスト */
+.pr-row.best{background:#fff0f3 !important;}
+.pr-row.best .pr-freq{color:#c0003a !important;font-size:1.1rem;font-weight:900;}
+.pr-row.best .pr-amt{color:#c0003a !important;font-size:1.5rem;font-weight:900;}
+.pr-row.best .pr-unit{color:#555 !important;}
+.pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem;font-weight:900;}
+.pr-row.best::before{border-color:#c0003a !important;}
+
+/* ===== 一番お得 完全上書き ===== */
+.pr-row.best{background:#ffecef !important;border:none !important;padding:28px 22px 22px !important;position:relative !important;margin:14px 10px 10px !important;border-radius:16px !important;box-shadow:0 4px 16px rgba(192,0,58,.1) !important;}
+.pr-row.best::before{content:'' !important;position:absolute !important;inset:0 !important;border-radius:16px !important;border:2.5px solid #c0003a !important;pointer-events:none !important;background:none !important;}
+.pr-row.best::after{display:none !important;}
+.pr-row.best .pr-freq{font-size:1.15rem !important;color:#c0003a !important;font-weight:900 !important;}
+.pr-row.best .pr-amt{font-size:1.55rem !important;color:#c0003a !important;font-weight:900 !important;}
+.pr-row.best .pr-unit{color:#666 !important;}
+.pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem !important;font-weight:900 !important;}
+
+/* ===== 料金表 一番お得 — 完全クリーン定義 ===== */
+.pr-row.best{
+  background:#ffecef !important;
+  border:none !important;
+  padding:28px 22px 22px !important;
+  position:relative !important;
+  margin:14px 10px 10px !important;
+  border-radius:16px !important;
+  box-shadow:0 4px 16px rgba(192,0,58,.1) !important;
+}
+.pr-row.best::before{
+  content:'' !important;
+  position:absolute !important;
+  inset:0 !important;
+  border-radius:16px !important;
+  border:2.5px solid #c0003a !important;
+  pointer-events:none !important;
+  background:none !important;
+}
+.pr-row.best::after{display:none !important;}
+.pr-row.best .pr-best{
+  background:#c0003a !important;
+  font-size:.8rem !important;
+  font-weight:900 !important;
+  padding:6px 18px !important;
+  border-radius:30px !important;
+  position:absolute !important;
+  top:-14px !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  white-space:nowrap !important;
+  letter-spacing:.05em !important;
+  box-shadow:0 3px 10px rgba(192,0,58,.3) !important;
+  color:#fff !important;
+}
+.pr-row.best .pr-freq{font-size:1.15rem !important;color:#c0003a !important;font-weight:900 !important;}
+.pr-row.best .pr-amt{font-size:1.55rem !important;color:#c0003a !important;font-weight:900 !important;}
+.pr-row.best .pr-unit{color:#666 !important;}
+.pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem !important;font-weight:900 !important;}
+
+/* ===== PC Nav ===== */
+.pc-nav{display:none;align-items:center;gap:18px;}
+.pc-nav a{font-family:var(--g);font-size:.72rem;font-weight:700;color:var(--text-sub);transition:color .2s;white-space:nowrap;}
+.pc-nav a:hover{color:var(--sky);}
+.pc-nav .hd-cta{color:#fff;padding:8px 14px;border-radius:30px;background:var(--green);}
+.pc-nav .hd-cta:hover{color:#fff;background:var(--green-dark);}
+
+/* ===== Hamburger ===== */
+.hb-btn{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:201;}
+.hb-btn span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s;}
+.hb-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hb-btn.open span:nth-child(2){opacity:0;}
+.hb-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ===== SP Nav Drawer ===== */
+.sp-nav{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#fff;z-index:200;padding:80px 0 40px;display:flex;flex-direction:column;box-shadow:-4px 0 20px rgba(0,0,0,.08);transition:right .3s ease;}
+.sp-nav.open{right:0;}
+.sp-nav-item{padding:16px 28px;font-family:var(--g);font-size:.95rem;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);transition:background .2s;}
+.sp-nav-item:hover{background:var(--bg-gray);}
+.sp-nav-cta{margin:24px 20px 0;padding:16px;background:var(--green);color:#fff;font-family:var(--g);font-size:.9rem;font-weight:900;text-align:center;border-radius:50px;box-shadow:0 4px 16px rgba(6,199,85,.3);}
+.sp-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:199;}
+.sp-nav-overlay.open{display:block;}
+
+@media(min-width:640px){
+  .pc-nav{display:flex;}
+  .hb-btn{display:none;}
+  .sp-nav,.sp-nav-overlay{display:none !important;}
+}
