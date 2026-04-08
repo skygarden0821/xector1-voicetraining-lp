@@ -27,6 +27,7 @@ textarea.form-input{resize:vertical;min-height:140px;line-height:1.8;}
 .form-submit{display:block;width:100%;padding:18px;background:var(--green);color:#fff;font-family:var(--g);font-size:1.05rem;font-weight:900;border:none;border-radius:60px;cursor:pointer;box-shadow:0 4px 20px rgba(6,199,85,.3);letter-spacing:.04em;margin-top:8px;transition:background .2s;}
 .form-submit:hover{background:var(--green-dark);}
 .form-confirm{background:var(--bg-gray);border-radius:14px;padding:20px;margin-top:24px;font-size:.82rem;color:var(--text-sub);line-height:2;text-align:center;}
+.form-status{margin-top:12px;font-size:.78rem;color:#c0392b;line-height:1.7;}
 </style>
 </head>
 <body style="padding-top:0;padding-bottom:40px;">
@@ -38,7 +39,12 @@ textarea.form-input{resize:vertical;min-height:140px;line-height:1.8;}
     ※体験レッスンのご予約は<a href="index.html#contact">こちら</a>からお願いいたします。
   </div>
 
-  <form name="contact" method="POST" action="thanks.html" data-netlify="true" onsubmit="return validateForm()">
+  <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitContactForm(event)">
+    <input type="hidden" name="form-name" value="contact">
+    <p hidden>
+      <label>Do not fill this out: <input name="bot-field"></label>
+    </p>
+
     <div class="form-group">
       <label class="form-label">氏名<span class="req">必須</span></label>
       <div class="form-row">
@@ -78,6 +84,7 @@ textarea.form-input{resize:vertical;min-height:140px;line-height:1.8;}
     </div>
 
     <button type="submit" class="form-submit">送信する</button>
+    <p id="formStatus" class="form-status" aria-live="polite"></p>
     <div class="form-confirm">送信後、確認メールが自動で届きます。<br>返信は通常2営業日以内を目安にご連絡いたします。</div>
   </form>
 </div>
@@ -87,6 +94,38 @@ function validateForm(){
   var ec=document.getElementById('email_confirm').value;
   if(e!==ec){alert('メールアドレスが一致しません。');return false;}
   return true;
+}
+
+function encode(data){
+  return Object.keys(data).map(function(key){
+    return encodeURIComponent(key)+'='+encodeURIComponent(data[key]);
+  }).join('&');
+}
+
+async function submitContactForm(event){
+  event.preventDefault();
+  var statusEl=document.getElementById('formStatus');
+  statusEl.textContent='';
+
+  if(!validateForm()) return false;
+
+  var form=document.getElementById('contactForm');
+  var formData=new FormData(form);
+  var data={};
+  formData.forEach(function(value,key){ data[key]=value; });
+
+  try {
+    var res=await fetch('/',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:encode(data)
+    });
+    if(!res.ok) throw new Error('submit failed');
+    window.location.href='thanks.html';
+  } catch(_e){
+    statusEl.textContent='送信に失敗しました。お手数ですが info@xector1.com まで直接ご連絡ください。';
+  }
+  return false;
 }
 </script>
 </body>
