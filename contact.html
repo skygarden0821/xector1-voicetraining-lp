@@ -38,7 +38,12 @@ textarea.form-input{resize:vertical;min-height:140px;line-height:1.8;}
     ※体験レッスンのご予約は<a href="index.html#contact">こちら</a>からお願いいたします。
   </div>
 
-  <form name="contact" method="POST" action="thanks.html" data-netlify="true" onsubmit="return validateForm()">
+  <form id="contactForm" name="contact" method="POST" action="https://formsubmit.co/info@xector1.com" onsubmit="return validateForm()">
+    <input type="hidden" name="_next" id="nextUrl" value="">
+    <input type="hidden" name="_subject" value="【お問い合わせ】プロボイスミュージックスクール">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
     <div class="form-group">
       <label class="form-label">氏名<span class="req">必須</span></label>
       <div class="form-row">
@@ -88,6 +93,8 @@ function validateForm(){
   if(e!==ec){alert('メールアドレスが一致しません。');return false;}
   return true;
 }
+
+document.getElementById('nextUrl').value=window.location.origin+'/thanks.html';
 </script>
 </body>
 </html>
