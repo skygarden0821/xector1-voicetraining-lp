@@ -294,5 +294,15 @@
 </script>
 
 <script src="js/main.js"></script>
+<script>
+  window.addEventListener("message", function(event) {
+    if (event.data && event.data.type === "booking-confirmed") {
+      gtag("event", "booking_confirmed", {
+        "event_category": "conversion",
+        "event_label": "無料体験レッスン申し込み"
+      });
+    }
+  });
+</script>
 </body>
 </html>
