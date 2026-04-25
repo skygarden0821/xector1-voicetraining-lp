@@ -269,7 +269,94 @@
 <section class="cta-b"><div class="c"><h2 class="cta-t">「歌が好き」自分の音楽を<br>１タップからはじめよう。</h2><p class="cta-d">まずは60分の無料体験レッスンから。</p><a href="#contact" class="btn btn-g btn-float" style="max-width:400px;">体験レッスンを受けてみる</a></div></section>
 
 <!-- Form -->
-<section class="sec" id="contact"><div class="c"><div class="sec-hd"><h2 class="sec-t"><span class="hl">体験レッスン予約</span></h2><p class="sec-desc">無料体験レッスン随時受付中です♪<br>ご予約は24時間受付中。以下の日程からお取り可能です。</p></div><div class="form-e" id="ycbEmbed"><script src="https://embed.ycb.me" async="true" data-domain="provoicemusicschool01" data-displaymode="auto"></script></div></div></section>
+<section class="sec" id="contact"><div class="c"><div class="sec-hd"><h2 class="sec-t"><span class="hl">体験レッスン予約</span></h2><p class="sec-desc">無料体験レッスン随時受付中です♪<br>ご予約は24時間受付中。以下の日程からお取り可能です。</p></div><div class="form-e" id="ycbEmbed">
+<style>
+.bk-wrap{max-width:620px;margin:0 auto;}
+.bk-group{margin-bottom:20px;}
+.bk-label{display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:#333;margin-bottom:7px;}
+.bk-req{background:#e94d75;color:#fff;font-size:.6rem;font-weight:700;border-radius:3px;padding:2px 6px;}
+.bk-input,.bk-select{width:100%;box-sizing:border-box;background:#fff;border:1.5px solid #c8e4f0;border-radius:8px;color:#333;font-family:'Noto Sans JP',sans-serif;font-size:.95rem;padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;}
+.bk-input::placeholder{color:#b0ccd8;}
+.bk-input:focus,.bk-select:focus{border-color:#4FCFE0;box-shadow:0 0 0 3px rgba(79,207,224,.15);}
+.bk-input.err,.bk-select.err{border-color:#e94d75;}
+.bk-sel-wrap{position:relative;}
+.bk-sel-wrap::after{content:'▾';position:absolute;right:13px;top:50%;transform:translateY(-50%);color:#4FCFE0;pointer-events:none;}
+.bk-dt-block{background:#f0fafd;border:1.5px solid #c8e4f0;border-radius:10px;padding:14px 14px 10px;margin-bottom:10px;}
+.bk-dt-tag{font-size:.72rem;font-weight:700;color:#4FCFE0;letter-spacing:.08em;margin-bottom:9px;}
+.bk-dt-tag span{color:#aaa;font-weight:400;}
+.bk-dt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:440px){.bk-dt-row{grid-template-columns:1fr;}}
+.bk-err{color:#e94d75;font-size:.7rem;margin-top:4px;display:none;}
+.bk-err.show{display:block;}
+.bk-divider{border:none;border-top:1.5px solid #e4f3f8;margin:24px 0;}
+.bk-notice{background:#f0fafd;border-left:3px solid #4FCFE0;border-radius:0 8px 8px 0;padding:11px 14px;margin-bottom:10px;font-size:.73rem;color:#555;line-height:1.75;}
+.bk-notice strong{color:#333;}
+.bk-btn{display:block;width:100%;max-width:400px;margin:32px auto 0;padding:17px 24px;border:none;border-radius:50px;background:linear-gradient(90deg,#4FCFE0,#7A49F2);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;box-shadow:0 4px 20px rgba(79,207,224,.4);}
+.bk-spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:bkspin .7s linear infinite;vertical-align:middle;margin-right:7px;}
+@keyframes bkspin{to{transform:rotate(360deg);}}
+.bk-input[type="date"]::-webkit-calendar-picker-indicator{opacity:.4;cursor:pointer;}
+</style>
+<div class="bk-wrap">
+<form id="bkForm" action="https://formspree.io/f/meevndln" method="POST">
+<input type="hidden" name="_next" value="https://www.provoicemusicschool.com/thanks.html">
+<input type="hidden" name="_subject" value="【プロボイス】体験レッスン予約申込み">
+<input type="text" name="_gotcha" style="display:none">
+<div class="bk-group">
+<div class="bk-label">ご希望日時 <span class="bk-req">必須</span></div>
+<p style="font-size:.73rem;color:#888;margin:0 0 12px;line-height:1.7;">10:00〜21:00が予約可能時間帯です。第三希望まで入力いただくとスムーズにご案内できます。</p>
+<div class="bk-dt-block">
+<div class="bk-dt-tag">第一希望 <span>（必須）</span></div>
+<div class="bk-dt-row">
+<div><input type="date" id="d1" name="第一希望_日付" class="bk-input" required><div class="bk-err" id="d1e">日付を選択してください</div></div>
+<div class="bk-sel-wrap"><select id="t1" name="第一希望_時間" class="bk-select" required><option value="" disabled selected>開始時間</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option></select><div class="bk-err" id="t1e">時間を選択してください</div></div>
+</div></div>
+<div class="bk-dt-block">
+<div class="bk-dt-tag">第二希望 <span>（任意）</span></div>
+<div class="bk-dt-row">
+<input type="date" name="第二希望_日付" class="bk-input">
+<div class="bk-sel-wrap"><select name="第二希望_時間" class="bk-select"><option value="" selected>開始時間</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option></select></div>
+</div></div>
+<div class="bk-dt-block">
+<div class="bk-dt-tag">第三希望 <span>（任意）</span></div>
+<div class="bk-dt-row">
+<input type="date" name="第三希望_日付" class="bk-input">
+<div class="bk-sel-wrap"><select name="第三希望_時間" class="bk-select"><option value="" selected>開始時間</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option></select></div>
+</div></div>
+</div>
+<hr class="bk-divider">
+<div class="bk-group"><label class="bk-label" for="uName">お名前 <span class="bk-req">必須</span></label><input type="text" id="uName" name="お名前" class="bk-input" placeholder="山田 花子" required autocomplete="name"><div class="bk-err" id="nameE">お名前を入力してください</div></div>
+<div class="bk-group"><label class="bk-label" for="uKana">フリガナ <span class="bk-req">必須</span></label><input type="text" id="uKana" name="フリガナ" class="bk-input" placeholder="ヤマダ ハナコ" required><div class="bk-err" id="kanaE">フリガナを入力してください</div></div>
+<div class="bk-group"><label class="bk-label" for="uTel">お電話番号 <span class="bk-req">必須</span></label><input type="tel" id="uTel" name="電話番号" class="bk-input" placeholder="090-1234-5678" required autocomplete="tel"><div class="bk-err" id="telE">電話番号を入力してください</div></div>
+<div class="bk-group"><label class="bk-label" for="uMail">メールアドレス <span class="bk-req">必須</span></label><input type="email" id="uMail" name="メールアドレス" class="bk-input" placeholder="example@mail.com" required autocomplete="email"><div class="bk-err" id="mailE">正しいメールアドレスを入力してください</div></div>
+<div class="bk-group"><label class="bk-label" for="uMail2">メールアドレス（確認用） <span class="bk-req">必須</span></label><input type="email" id="uMail2" name="_email_confirm" class="bk-input" placeholder="もう一度入力してください" required autocomplete="off"><div class="bk-err" id="mail2E">メールアドレスが一致しません</div></div>
+<hr class="bk-divider">
+<div class="bk-notice"><strong>迷惑メールフォルダのご確認をお願いします</strong><br>確認メールが迷惑メールに振り分けられる場合があります。申込み後に届かない場合はご確認ください。</div>
+<div class="bk-notice"><strong>受信拒否設定をされている方へ</strong><br>@provoicemusicschool.com を許可リストに追加してください。</div>
+<button type="submit" class="bk-btn" id="bkBtn">無料体験レッスンを予約する →</button>
+</form>
+</div>
+<script>
+(function(){
+var today=new Date().toISOString().split('T')[0];
+document.querySelectorAll('input[type="date"]').forEach(function(el){el.min=today;});
+var form=document.getElementById('bkForm'),btn=document.getElementById('bkBtn');
+function chk(el,errEl,test){if(!test){el.classList.add('err');errEl.classList.add('show');return false;}el.classList.remove('err');errEl.classList.remove('show');return true;}
+form.addEventListener('submit',function(e){
+var ok=true;
+if(!chk(document.getElementById('d1'),document.getElementById('d1e'),document.getElementById('d1').value))ok=false;
+if(!chk(document.getElementById('t1'),document.getElementById('t1e'),document.getElementById('t1').value))ok=false;
+if(!chk(document.getElementById('uName'),document.getElementById('nameE'),document.getElementById('uName').value.trim()))ok=false;
+if(!chk(document.getElementById('uKana'),document.getElementById('kanaE'),document.getElementById('uKana').value.trim()))ok=false;
+if(!chk(document.getElementById('uTel'),document.getElementById('telE'),document.getElementById('uTel').value.trim()))ok=false;
+var ml=document.getElementById('uMail'),m2=document.getElementById('uMail2');
+if(!chk(ml,document.getElementById('mailE'),ml.value&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ml.value)))ok=false;
+if(!chk(m2,document.getElementById('mail2E'),m2.value===ml.value&&m2.value!==''))ok=false;
+if(!ok){e.preventDefault();return;}
+btn.disabled=true;btn.innerHTML='<span class="bk-spin"></span>送信中...';
+});
+})();
+</script>
+</div></div></section>
 
 <footer class="ft"><div class="c"><div class="ft-name">プロボイスミュージックスクール<small>オンラインボイストレーニング × 活動バックアップスクール</small></div><p class="ft-desc">初心者からプロ志望まで。スマホ・タブレット・PCとネット環境があれば全国どこからでも受講可能。SNS活動のプロデュースから楽曲制作・全国リリースまで一貫サポート。</p><div class="ft-links"><a href="#features">活動サポート</a><a href="#roadmap">体験の流れ</a><a href="#pricing">料金</a><a href="#voices">受講生の声</a><a href="#faq">FAQ</a><a href="#contact">体験レッスン</a><a href="contact.html">お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="company.html">運営会社</a></div><div class="ft-btm">© 2026 プロボイスミュージックスクール All Rights Reserved.</div></div></footer>
 
