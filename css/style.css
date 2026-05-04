@@ -1,7 +1,7 @@
 :root{--sky:#4AADE8;--sky-dark:#3591C5;--sky-pale:#EAF5FC;--sky-mist:#F4FAFD;--accent:#FF6B8A;--accent-dark:#E55A78;--accent-pale:#FFF0F3;--yellow:#FFD43B;--yellow-pale:#FFFAE6;--ym:rgba(255,213,59,.45);--green:#06C755;--green-dark:#05A648;--pro-bg:#1B2838;--pro-bg2:#243447;--text:#1a1a1a;--text-sub:#555;--text-light:#999;--bg:#FFF;--bg-gray:#F5F7F9;--border:#E2E6EA;--g:'Noto Sans JP',sans-serif;--r:'Zen Maru Gothic','Noto Sans JP',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--r);color:var(--text);background:var(--bg);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;padding-top:88px;padding-bottom:70px;}
+body{font-family:var(--r);color:var(--text);background:var(--bg);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;padding-top:52px;padding-bottom:70px;}
 img{max-width:100%;height:auto;display:block;}
 a{text-decoration:none;color:inherit;}
 ul{list-style:none;}
@@ -16,18 +16,8 @@ ul{list-style:none;}
 @keyframes btnGlow{0%,100%{box-shadow:0 4px 20px rgba(6,199,85,.35),0 0 0 0 rgba(6,199,85,.45)}60%{box-shadow:0 6px 32px rgba(6,199,85,.5),0 0 0 16px rgba(6,199,85,0)}}
 .btn-float{animation:ctaFloat 2.5s ease-in-out infinite,btnGlow 2s ease-in-out infinite;}
 
-/* ===== Countdown Bar ===== */
-.cd{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#E63946,#FF6B8A);color:#fff;padding:6px 12px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:nowrap;font-family:var(--g);box-shadow:0 2px 12px rgba(230,57,70,.25);height:36px;overflow:hidden;}
-.cd-label{font-weight:600;font-size:.62rem;white-space:nowrap;}
-.cd-free{font-weight:900;font-size:.85rem;letter-spacing:.02em;white-space:nowrap;position:relative;overflow:hidden;}
-.cd-free::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimFree 2.5s ease-in-out infinite;}
-@keyframes shimFree{0%{left:-100%}100%{left:200%}}
-.cd-nums{display:flex;align-items:center;gap:1px;flex-shrink:0;}
-.cd-n{font-size:.85rem;font-weight:900;background:rgba(0,0,0,.2);border-radius:3px;padding:1px 4px;min-width:22px;text-align:center;letter-spacing:-.02em;}
-.cd-u{font-size:.42rem;opacity:.6;margin:0 1px;}
-
 /* Header */
-.hd{position:fixed;top:36px;left:0;right:0;z-index:320;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+.hd{position:fixed;top:0;left:0;right:0;z-index:320;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
 .hd.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.06);}
 .hd-in{max-width:640px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
 .logo{font-family:var(--g);font-weight:900;font-size:.82rem;line-height:1.3;letter-spacing:.02em;}
@@ -216,23 +206,19 @@ ul{list-style:none;}
 .pr-unit b{font-size:.82rem;font-weight:800;color:var(--sky-dark);}
 .pr-row.best .pr-unit b{color:var(--accent);font-size:.88rem;}
 .pr-best{font-family:var(--g);font-size:.55rem;font-weight:900;background:var(--accent);color:#fff;padding:2px 8px;border-radius:3px;position:absolute;top:10px;right:16px;}
-/* compare table — CHANGED: プロボイス=sky color+2px, おトク=dark red+bold+3px */
+/* compare table */
 .cmp{width:100%;border-collapse:collapse;margin-top:28px;font-family:var(--g);font-size:.82rem;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
 .cmp th{padding:12px 8px;font-weight:700;text-align:center;}
 .cmp th:first-child{text-align:left;width:26%;}
 .cmp thead th{background:var(--bg-gray);color:var(--text-sub);font-size:.7rem;}
 .cmp .cm{color:var(--text-light);}
-/* プロボイスヘッダー: 水色 */
 .cmp .co{color:var(--sky);font-weight:900;font-size:calc(.7rem + 2px);}
 .cmp td{padding:12px 8px;text-align:center;border-top:1px solid var(--border);font-weight:600;}
 .cmp td:first-child{text-align:left;font-weight:700;font-size:.78rem;}
 .cmp .tm{color:var(--text-light);text-decoration:line-through;font-weight:400;}
-/* プロボイス価格セル: 水色 +2px */
 .cmp .to{color:var(--sky);font-weight:900;font-size:calc(.9rem + 2px);}
-/* おトク額: 濃い赤 + bold + 3px大きく */
 .cmp .ts{color:#C40000;font-weight:900;font-size:calc(.7rem + 3px);}
 .cmp tr.best-r{background:var(--accent-pale);}
-/* best行のプロボイス価格も水色 */
 .cmp tr.best-r .to{color:var(--sky);font-size:calc(.95rem + 2px);}
 .pr-extra{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-top:12px;}
 .pr-extra-r{display:flex;justify-content:space-between;align-items:center;font-family:var(--g);font-size:.92rem;padding:5px 0;}
@@ -287,7 +273,7 @@ ul{list-style:none;}
 .ft-links a:hover{color:rgba(255,255,255,.9);}
 .ft-btm{border-top:1px solid rgba(255,255,255,.1);padding-top:14px;font-size:.55rem;opacity:.35;}
 
-/* Floating CTA — STRENGTHENED glow */
+/* Floating CTA */
 .fl{position:fixed;bottom:0;left:0;right:0;z-index:99;padding:12px 20px;transform:translateY(100%);transition:transform .3s;}
 .fl.show{transform:translateY(0);}
 .fl-btn{display:block;width:100%;max-width:440px;margin:0 auto;padding:16px;border-radius:60px;text-align:center;font-family:var(--g);font-size:1.02rem;font-weight:900;color:#fff;background:var(--green);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(6,199,85,.35);position:relative;}
@@ -378,15 +364,7 @@ ul{list-style:none;}
 /* 入会金 無料キャンペーン中 大きく */
 .pr-free-v span{font-size:.92rem !important;}
 
-/* 一番お得 row — 単色・高コントラスト */
-.pr-row.best{background:#fff0f3 !important;}
-.pr-row.best .pr-freq{color:#c0003a !important;font-size:1.1rem;font-weight:900;}
-.pr-row.best .pr-amt{color:#c0003a !important;font-size:1.5rem;font-weight:900;}
-.pr-row.best .pr-unit{color:#555 !important;}
-.pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem;font-weight:900;}
-.pr-row.best::before{border-color:#c0003a !important;}
-
-/* ===== 一番お得 完全上書き ===== */
+/* 一番お得 row */
 .pr-row.best{background:#ffecef !important;border:none !important;padding:28px 22px 22px !important;position:relative !important;margin:14px 10px 10px !important;border-radius:16px !important;box-shadow:0 4px 16px rgba(192,0,58,.1) !important;}
 .pr-row.best::before{content:'' !important;position:absolute !important;inset:0 !important;border-radius:16px !important;border:2.5px solid #c0003a !important;pointer-events:none !important;background:none !important;}
 .pr-row.best::after{display:none !important;}
@@ -394,27 +372,6 @@ ul{list-style:none;}
 .pr-row.best .pr-amt{font-size:1.55rem !important;color:#c0003a !important;font-weight:900 !important;}
 .pr-row.best .pr-unit{color:#666 !important;}
 .pr-row.best .pr-unit b{color:#c0003a !important;font-size:1.05rem !important;font-weight:900 !important;}
-
-\/* ===== 料金表 一番お得 — ゴールドお得デザイン ===== *\/
-.pr-row.best{
-  background:linear-gradient(135deg,#fffbea,#fff8d6) !important;
-  border:none !important;
-  padding:28px 22px 22px !important;
-  position:relative !important;
-  margin:14px 10px 10px !important;
-  border-radius:16px !important;
-  box-shadow:0 4px 20px rgba(200,150,0,.15) !important;
-}
-.pr-row.best::before{
-  content:'' !important;
-  position:absolute !important;
-  inset:0 !important;
-  border-radius:16px !important;
-  border:2.5px solid #d4a017 !important;
-  pointer-events:none !important;
-  background:none !important;
-}
-.pr-row.best::after{display:none !important;}
 .pr-row.best .pr-best{
   background:linear-gradient(135deg,#d4a017,#f0c040) !important;
   font-size:.85rem !important;
@@ -431,10 +388,6 @@ ul{list-style:none;}
   color:#fff !important;
   text-shadow:0 1px 3px rgba(0,0,0,.2) !important;
 }
-.pr-row.best .pr-freq{font-size:1.15rem !important;color:#7a5800 !important;font-weight:900 !important;}
-.pr-row.best .pr-amt{font-size:1.55rem !important;color:#7a5800 !important;font-weight:900 !important;}
-.pr-row.best .pr-unit{color:#a07800 !important;}
-.pr-row.best .pr-unit b{color:#7a5800 !important;font-size:1.05rem !important;font-weight:900 !important;}
 
 /* ===== PC Nav ===== */
 .pc-nav{display:none;align-items:center;gap:18px;}
@@ -462,10 +415,9 @@ ul{list-style:none;}
 @media(min-width:640px){
   .pc-nav{display:flex;}
   .hb-btn{display:none;}
-  
 }
 
-/* 完全0円 エフェクト — .hl は触らず .zero-v に付与 */
+/* 完全0円 エフェクト */
 @keyframes zeroPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @keyframes zeroGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(255,107,138,0))}50%{filter:drop-shadow(0 0 12px rgba(255,107,138,.5))}}
 .zero-v{
